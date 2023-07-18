@@ -8,14 +8,28 @@ runs:
       with:
         node-version: 16
         registry-url: https://registry.npmjs.org
-        cache: yarn
+        cache: pnpm
+
+    - uses: pnpm/action-setup@v2
+      name: Install pnpm
+      id: pnpm-install
+      with:
+        version: 7
+        run_install: false
+
+    - name: Get pnpm store directory
+      id: pnpm-cache
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
     - uses: actions/cache@v3
-      id: install-cache
+      name: Setup pnpm cache
       with:
-        path: node_modules/
-        key: ${{ runner.os }}-install-${{ hashFiles('**/yarn.lock') }}
+        path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
 
-    - if: steps.install-cache.outputs.cache-hit != 'true'
-      run: yarn install --frozen-lockfile --ignore-scripts
-      shell: bash
+    - name: Install dependencies
+      run: pnpm install
