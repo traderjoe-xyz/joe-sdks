@@ -4,18 +4,18 @@ runs:
   steps:
     - uses: actions/checkout@v3
 
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
-        registry-url: https://registry.npmjs.org
-        cache: pnpm
-
     - uses: pnpm/action-setup@v2
       name: Install pnpm
       id: pnpm-install
       with:
         version: 7
         run_install: false
+        
+     - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+        registry-url: https://registry.npmjs.org
+        cache: pnpm
 
     - name: Get pnpm store directory
       id: pnpm-cache
