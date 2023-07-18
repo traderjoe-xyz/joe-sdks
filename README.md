@@ -1,5 +1,13 @@
 # Joe SDKs
 
-## Running
+## Commands
 
-TODO
+```
+pnpm install
+pnpm build
+
+pnpm lint
+pnpm lint:fix
+
+pnpm clean
+```
