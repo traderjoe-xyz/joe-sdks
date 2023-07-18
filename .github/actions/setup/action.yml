@@ -13,9 +13,9 @@ runs:
 
     - uses: actions/setup-node@v3
       with:
-      node-version: 16
-      registry-url: https://registry.npmjs.org
-      cache: pnpm
+        node-version: 16
+        registry-url: https://registry.npmjs.org
+        cache: pnpm
 
     - name: Get pnpm store directory
       id: pnpm-cache
