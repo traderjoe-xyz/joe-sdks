@@ -14,11 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/setup
-      - run: turbo lint
+      - run: pnpm lint
 
   unit-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/setup
-      - run: turbo test
+      - run: pnpm test
