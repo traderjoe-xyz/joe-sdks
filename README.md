@@ -1,6 +1,13 @@
 # Joe SDKs
 
-## Commands
+## Packages
+
+```
+yarn add @traderjoe-xyz/sdk
+yarn add @traderjoe-xyz/sdk-v2
+```
+
+## Develop
 
 ```
 pnpm install
