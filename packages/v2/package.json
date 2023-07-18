@@ -1,0 +1,48 @@
+{
+  "name": "@traderjoe-xyz/sdk-v2",
+  "license": "MIT",
+  "version": "2.0.9",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/traderjoe-xyz/joe-sdk-v2",
+  "keywords": [
+    "traderjoe-xyz",
+    "avalanche"
+  ],
+  "module": "dist/sdk.esm.js",
+  "scripts": {
+    "lint": "eslint \"src/**/*.ts*\"",
+    "lint:fix": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "test": "vitest --config ./vitest.config.ts",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  
+  "dependencies": {
+    "@traderjoe-xyz/sdk": "^4.0.7",
+    "jsbi": "^3.1.1",
+    "lodash.flatmap": "^4.5.0",
+    "tiny-invariant": "^1.1.0",
+    "tiny-warning": "^1.0.3",
+    "toformat": "^2.0.0"
+  },
+  "peerDependencies": {
+    "viem": ">=0.3.35"
+  },
+  "devDependencies": {
+    "@types/big.js": "^4.0.5",
+    "@types/jest": "^24.0.25",
+    "@types/lodash.flatmap": "^4.5.7",
+    "node-fetch": "^3.3.1",
+    "viem": "^0.3.35"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
