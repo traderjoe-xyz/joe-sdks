@@ -9,9 +9,6 @@ export default defineConfig({
     coverage: {
       reporter: ['text', 'html'],
       exclude: ['node_modules/', './setupTests.js']
-    },
-    deps: {
-      inline: ['@traderjoe-xyz/sdk-core']
     }
   }
 })
