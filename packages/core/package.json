@@ -12,9 +12,8 @@
     "traderjoe-xyz",
     "avalanche"
   ],
-  "module": "dist/sdk.esm.js",
   "scripts": {
-    "test": "vitest --config ./vitest.config.ts",
+    "test": "vitest --config ./vitest.config.ts --allowOnly",
     "lint": "eslint \"src/**/*.ts*\" \"test/**/*.ts*\"",
     "lint:fix": "prettier --write \"**/*.{ts,tsx,md}\"",
     "build": "tsup src/index.ts --format esm,cjs --dts",
