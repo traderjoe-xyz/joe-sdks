@@ -5,9 +5,12 @@
     "lint": "turbo lint",
     "clean": "turbo clean && rm -rf node_modules",
     "lint:fix": "turbo lint:fix",
-    "test": "turbo test"
+    "test": "turbo test",
+    "changeset:release": "pnpm build && changeset publish",
+    "changeset:version": "changeset version && pnpm install --lockfile-only"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "babel-plugin-transform-jsbi-to-bigint": "^1.3.1",
     "eslint": "^8.45.0",
