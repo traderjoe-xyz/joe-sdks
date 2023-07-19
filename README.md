@@ -3,8 +3,9 @@
 ## Packages
 
 ```
-yarn add @traderjoe-xyz/sdk
-yarn add @traderjoe-xyz/sdk-v2
+npm install @traderjoe-xyz/sdk-core
+npm install @traderjoe-xyz/sdk viem
+npm install @traderjoe-xyz/sdk-v2 viem
 ```
 
 ## Develop
