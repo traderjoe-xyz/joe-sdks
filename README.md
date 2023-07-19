@@ -4,8 +4,8 @@
 
 ```
 npm install @traderjoe-xyz/sdk-core
-npm install @traderjoe-xyz/sdk viem
-npm install @traderjoe-xyz/sdk-v2 viem
+npm install @traderjoe-xyz/sdk
+npm install @traderjoe-xyz/sdk-v2
 ```
 
 ## Develop
