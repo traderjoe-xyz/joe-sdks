@@ -2,9 +2,7 @@
   "name": "@traderjoe-xyz/sdk-core",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "module": "dist/index.js",
   "files": [
     "dist",
     "index.js"
