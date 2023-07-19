@@ -7,7 +7,9 @@
     },
     "lint": {},
     "lint:fix": {},
-    "test": {},
+    "test": {
+      "dependsOn": ["^build"]
+    },
     "clean": {}
   }
 }

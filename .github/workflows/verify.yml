@@ -17,6 +17,14 @@ jobs:
       - name: Lint code
         run: pnpm lint
 
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/setup
+      - run: pnpm test
+
   build:
     name: Build
     needs: lint
@@ -30,12 +38,3 @@ jobs:
 
       - name: Build
         run: pnpm build
-
-  unit-tests:
-    needs: build
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/setup
-      - run: pnpm test
