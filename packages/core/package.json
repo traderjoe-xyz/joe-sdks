@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "module": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "index.js"
   ],
   "repository": "https://github.com/traderjoe-xyz/joe-sdks",
   "keywords": [
