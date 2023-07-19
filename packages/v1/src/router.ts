@@ -1,7 +1,11 @@
-import { TradeType } from './constants'
+import {
+  TradeType,
+  validateAndParseAddress,
+  CurrencyAmount,
+  Percent
+} from '@traderjoe-xyz/sdk-core'
 import invariant from 'tiny-invariant'
-import { validateAndParseAddress } from './utils'
-import { CurrencyAmount, Percent, Trade } from './entities'
+import { Trade } from './entities'
 
 /**
  * Options for producing the arguments to send call to the router.

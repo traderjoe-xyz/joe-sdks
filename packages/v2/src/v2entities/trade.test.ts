@@ -3,9 +3,8 @@ import {
   WNATIVE as _WNATIVE,
   Token,
   TokenAmount,
-  JSBI,
   Percent
-} from '@traderjoe-xyz/sdk'
+} from '@traderjoe-xyz/sdk-core'
 import { PairV2 } from './pair'
 import { RouteV2 } from './route'
 import { TradeV2 } from './trade'
@@ -13,6 +12,7 @@ import { LBPairABI } from '../abis/ts'
 import { createPublicClient, http, parseUnits } from 'viem'
 import { avalancheFuji } from 'viem/chains'
 import { describe, it, expect } from 'vitest'
+import JSBI from 'jsbi'
 
 describe('TradeV2 entity', () => {
   const CLIENT = createPublicClient({

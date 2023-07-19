@@ -21,7 +21,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@traderjoe-xyz/sdk": "workspace:^",
+    "@traderjoe-xyz/sdk-core": "workspace:^",
     "jsbi": "^4.3.0",
     "lodash.flatmap": "^4.5.0",
     "tiny-invariant": "^1.3.1",

@@ -1,5 +1,6 @@
 import * as abisJson from './json'
 import * as abisTs from './ts'
+import { describe, it, expect } from 'vitest'
 
 describe('abis', () => {
   it('same number of TS abis as JSON', () => {

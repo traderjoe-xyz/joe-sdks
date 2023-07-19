@@ -5,8 +5,9 @@ import {
   Percent,
   TokenAmount,
   Fraction,
-  ChainId
-} from '@traderjoe-xyz/sdk'
+  ChainId,
+  ONE
+} from '@traderjoe-xyz/sdk-core'
 
 import {
   LBPair,
@@ -15,7 +16,7 @@ import {
   LiquidityDistribution,
   BinReserves
 } from '../types'
-import { LB_FACTORY_ADDRESS, LB_FACTORY_V21_ADDRESS, ONE } from '../constants'
+import { LB_FACTORY_ADDRESS, LB_FACTORY_V21_ADDRESS } from '../constants'
 import { Bin } from './bin'
 import { getLiquidityConfig } from '../utils'
 

@@ -2,11 +2,10 @@ import {
   Token,
   WAVAX,
   ChainId,
-  Pair,
   TokenAmount,
-  Route,
   CNATIVE
-} from '../src'
+} from '@traderjoe-xyz/sdk-core'
+import { Pair, Route } from '../src'
 import { describe, it, expect } from 'vitest'
 
 describe('Route', () => {

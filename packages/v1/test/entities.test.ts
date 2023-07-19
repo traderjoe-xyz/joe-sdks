@@ -1,15 +1,13 @@
 import invariant from 'tiny-invariant'
+import { Pair, Route, Trade } from '../src'
 import {
   ChainId,
   WAVAX as _WAVAX,
   TradeType,
   Rounding,
   Token,
-  TokenAmount,
-  Pair,
-  Route,
-  Trade
-} from '../src'
+  TokenAmount
+} from '@traderjoe-xyz/sdk-core'
 import { describe, it, expect } from 'vitest'
 
 const ADDRESSES = [

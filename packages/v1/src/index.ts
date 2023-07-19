@@ -2,10 +2,6 @@ import JSBI from 'jsbi'
 export { JSBI }
 
 export {
-  BigintIsh,
-  ChainId,
-  TradeType,
-  Rounding,
   FACTORY_ADDRESS,
   JOE_ADDRESS,
   BAR_ADDRESS,
@@ -21,7 +17,6 @@ export {
   BORINGTOKENSCANNER_ADDRESS,
   BORINGDASHBOARD_ADDRESS,
   INIT_CODE_HASH,
-  MINIMUM_LIQUIDITY,
   UNITROLLER_ADDRESS,
   JAVAX_ADDRESS,
   JOELENS_ADDRESS,

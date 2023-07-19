@@ -1,9 +1,7 @@
-import { TokenAmount } from './entities/fractions/tokenAmount'
+import { TokenAmount, ChainId, Token } from '@traderjoe-xyz/sdk-core'
 import { Pair } from './entities/pair'
 import invariant from 'tiny-invariant'
 import { ERC20ABI, JoePairABI } from './abis/ts'
-import { ChainId } from './constants'
-import { Token } from './entities/token'
 import { PublicClient, getAddress } from 'viem'
 import { getDefaultPublicClient } from './utils'
 

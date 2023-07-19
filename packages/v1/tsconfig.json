@@ -1,5 +1,12 @@
 {
-  "include": ["src", "test"],
+  "include": [
+    "src",
+    "test",
+    "../core/src/entities/currency.ts",
+    "../core/src/entities/token.ts",
+    "../core/test/fraction.test.ts",
+    "../core/test/token.test.ts"
+  ],
   "compilerOptions": {
     "target": "es2018",
     "module": "esnext",

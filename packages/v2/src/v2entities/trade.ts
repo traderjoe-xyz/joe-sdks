@@ -1,14 +1,16 @@
 import {
   Token,
   TokenAmount,
-  Price,
   Percent,
   Fraction,
   CurrencyAmount,
   TradeType,
   ChainId,
-  WNATIVE
-} from '@traderjoe-xyz/sdk'
+  WNATIVE,
+  ONE,
+  ZERO,
+  Price
+} from '@traderjoe-xyz/sdk-core'
 import JSBI from 'jsbi'
 import invariant from 'tiny-invariant'
 
@@ -16,8 +18,6 @@ import { RouteV2 } from './route'
 import {
   LB_QUOTER_V21_ADDRESS,
   LB_ROUTER_V21_ADDRESS,
-  ONE,
-  ZERO,
   ZERO_HEX
 } from '../constants'
 import { toHex, validateAndParseAddress, isZero } from '../utils'

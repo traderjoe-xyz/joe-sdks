@@ -3,15 +3,13 @@ import {
   ChainId,
   CNATIVE,
   CurrencyAmount,
-  Pair,
   Percent,
-  Route,
   Token,
   TokenAmount,
-  Trade,
   TradeType,
   WAVAX
-} from '../src'
+} from '@traderjoe-xyz/sdk-core'
+import { Pair, Route, Trade } from '../src'
 import { describe, it, expect } from 'vitest'
 
 const CHAIN_ID = ChainId.FUJI

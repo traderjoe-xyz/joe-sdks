@@ -1,4 +1,11 @@
-import { ChainId, Token, Pair, TokenAmount, WAVAX, Price } from '../src'
+import {
+  ChainId,
+  Token,
+  TokenAmount,
+  WAVAX,
+  Price
+} from '@traderjoe-xyz/sdk-core'
+import { Pair } from '../src'
 import { describe, it, expect } from 'vitest'
 
 describe('Pair', () => {

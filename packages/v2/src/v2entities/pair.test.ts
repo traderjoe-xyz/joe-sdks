@@ -1,4 +1,4 @@
-import { ChainId, WAVAX, Token } from '@traderjoe-xyz/sdk'
+import { ChainId, WAVAX, Token } from '@traderjoe-xyz/sdk-core'
 import { PairV2 } from './pair'
 import { createPublicClient, http } from 'viem'
 import { avalancheFuji } from 'viem/chains'

@@ -4,17 +4,24 @@ import {
 } from '../errors'
 import invariant from 'tiny-invariant'
 
-import { ChainId, ONE, TradeType, ZERO } from '../constants'
-import { sortedInsert } from '../utils'
-import { Currency } from './currency'
-import { CurrencyAmount } from './fractions/currencyAmount'
-import { Fraction } from './fractions/fraction'
-import { Percent } from './fractions/percent'
-import { Price } from './fractions/price'
-import { TokenAmount } from './fractions/tokenAmount'
+import {
+  ChainId,
+  ONE,
+  TradeType,
+  ZERO,
+  sortedInsert,
+  CurrencyAmount,
+  Currency,
+  Fraction,
+  Percent,
+  Token,
+  TokenAmount,
+  currencyEquals,
+  WAVAX
+} from '@traderjoe-xyz/sdk-core'
+import { Price } from './price'
 import { Pair } from './pair'
 import { Route } from './route'
-import { currencyEquals, Token, WAVAX } from './token'
 
 /**
  * Returns the percent difference between the mid price and the execution price, i.e. price impact.

@@ -1,4 +1,4 @@
-import { CurrencyAmount } from '@traderjoe-xyz/sdk'
+import { CurrencyAmount } from '@traderjoe-xyz/sdk-core'
 
 import { spotUniform, curve, bidAsk } from '../constants'
 import {

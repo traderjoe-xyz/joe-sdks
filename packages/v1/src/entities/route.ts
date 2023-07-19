@@ -1,10 +1,8 @@
-import { ChainId } from '../constants'
+import { ChainId, Currency, Token, WAVAX } from '@traderjoe-xyz/sdk-core'
 import invariant from 'tiny-invariant'
 
-import { Currency } from './currency'
-import { Token, WAVAX } from './token'
 import { Pair } from './pair'
-import { Price } from './fractions/price'
+import { Price } from './price'
 
 export class Route {
   public readonly pairs: Pair[]

@@ -1,6 +1,6 @@
 import invariant from 'tiny-invariant'
 import warning from 'tiny-warning'
-import { CurrencyAmount } from '@traderjoe-xyz/sdk'
+import { CurrencyAmount } from '@traderjoe-xyz/sdk-core'
 import { getAddress } from 'viem'
 
 // warns if addresses are not checksummed

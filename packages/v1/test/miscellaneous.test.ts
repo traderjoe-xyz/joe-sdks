@@ -2,10 +2,9 @@ import {
   ChainId,
   Token,
   TokenAmount,
-  Pair,
-  InsufficientInputAmountError
-} from '../src'
-import { sortedInsert } from '../src/utils'
+  sortedInsert
+} from '@traderjoe-xyz/sdk-core'
+import { Pair, InsufficientInputAmountError } from '../src'
 import { describe, it, expect } from 'vitest'
 
 const CHAIN_ID = ChainId.FUJI
