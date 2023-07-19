@@ -2,10 +2,10 @@
   "name": "@traderjoe-xyz/sdk-core",
   "version": "1.0.0",
   "license": "MIT",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist",
-    "index.js"
+    "dist"
   ],
   "repository": "https://github.com/traderjoe-xyz/joe-sdks",
   "keywords": [
