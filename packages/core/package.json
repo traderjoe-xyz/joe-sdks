@@ -36,11 +36,6 @@
     "viem": "^0.3.50"
   },
   "engines": {
-    "node": ">=10"
-  },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "./setupTests.js"
-    ]
+    "node": ">=14"
   }
 }

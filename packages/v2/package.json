@@ -38,7 +38,7 @@
     "viem": "^0.3.35"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "publishConfig": {
     "access": "public"
