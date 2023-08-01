@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 2.1.1
+
+### Patch Changes
+
+- 29f2f07: fix eth dexcandles subgraph url
+
 ## 2.1.0
 
 ### Minor Changes
