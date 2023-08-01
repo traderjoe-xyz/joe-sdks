@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 2.0.11
+
+### Patch Changes
+
+- dd56a09: Update limit order manager and v21 quoter addresses
+
 ## 2.0.10
 
 ### Patch Changes
