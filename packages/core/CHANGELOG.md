@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-core
 
+## 1.1.0
+
+### Minor Changes
+
+- 8065d41: Add support for Ethereum
+
 ## 1.0.1
 
 ### Patch Changes
