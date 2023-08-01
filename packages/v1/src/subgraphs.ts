@@ -12,7 +12,8 @@ export const EXCHANGE_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.BNB_CHAIN]:
     'https://api.thegraph.com/subgraphs/name/traderjoe-xyz/joe-v1-bnb',
   [ChainId.BNB_TESTNET]:
-    'https://api.thegraph.com/subgraphs/name/traderjoe-xyz/joe-v1-bnbtest'
+    'https://api.thegraph.com/subgraphs/name/traderjoe-xyz/joe-v1-bnbtest',
+  [ChainId.ETHEREUM]: ''
 }
 
 export const MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -23,7 +24,8 @@ export const MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARBITRUM_ONE]: '',
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
-  [ChainId.BNB_TESTNET]: ''
+  [ChainId.BNB_TESTNET]: '',
+  [ChainId.ETHEREUM]: ''
 }
 
 export const DEXCANDLES_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -34,7 +36,8 @@ export const DEXCANDLES_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARBITRUM_ONE]: '',
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
-  [ChainId.BNB_TESTNET]: ''
+  [ChainId.BNB_TESTNET]: '',
+  [ChainId.ETHEREUM]: ''
 }
 
 export const BAR_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -44,7 +47,8 @@ export const BAR_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARBITRUM_ONE]: '',
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
-  [ChainId.BNB_TESTNET]: ''
+  [ChainId.BNB_TESTNET]: '',
+  [ChainId.ETHEREUM]: ''
 }
 
 export const LENDING_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -55,7 +59,8 @@ export const LENDING_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARBITRUM_ONE]: '',
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
-  [ChainId.BNB_TESTNET]: ''
+  [ChainId.BNB_TESTNET]: '',
+  [ChainId.ETHEREUM]: ''
 }
 
 export const ROCKET_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -66,7 +71,8 @@ export const ROCKET_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARBITRUM_ONE]: '',
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
-  [ChainId.BNB_TESTNET]: ''
+  [ChainId.BNB_TESTNET]: '',
+  [ChainId.ETHEREUM]: ''
 }
 
 export const SJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -78,7 +84,8 @@ export const SJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
     'https://api.thegraph.com/subgraphs/name/traderjoe-xyz/sjoe-arbitrum',
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
-  [ChainId.BNB_TESTNET]: ''
+  [ChainId.BNB_TESTNET]: '',
+  [ChainId.ETHEREUM]: ''
 }
 
 export const MONEY_MAKER_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -89,7 +96,8 @@ export const MONEY_MAKER_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARBITRUM_ONE]: '',
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
-  [ChainId.BNB_TESTNET]: ''
+  [ChainId.BNB_TESTNET]: '',
+  [ChainId.ETHEREUM]: ''
 }
 
 export const VEJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -100,7 +108,8 @@ export const VEJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARBITRUM_ONE]: '',
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
-  [ChainId.BNB_TESTNET]: ''
+  [ChainId.BNB_TESTNET]: '',
+  [ChainId.ETHEREUM]: ''
 }
 
 export const BOOSTED_MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -111,7 +120,8 @@ export const BOOSTED_MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARBITRUM_ONE]: '',
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
-  [ChainId.BNB_TESTNET]: ''
+  [ChainId.BNB_TESTNET]: '',
+  [ChainId.ETHEREUM]: ''
 }
 
 export const NFT_CONTRACTS_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -122,7 +132,8 @@ export const NFT_CONTRACTS_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARBITRUM_ONE]: '',
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
-  [ChainId.BNB_TESTNET]: ''
+  [ChainId.BNB_TESTNET]: '',
+  [ChainId.ETHEREUM]: ''
 }
 
 export const JOEPEG_MARKETPLACE_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -133,7 +144,8 @@ export const JOEPEG_MARKETPLACE_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARBITRUM_ONE]: '',
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
-  [ChainId.BNB_TESTNET]: ''
+  [ChainId.BNB_TESTNET]: '',
+  [ChainId.ETHEREUM]: ''
 }
 
 export const FEE_COLLECTOR_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -144,5 +156,6 @@ export const FEE_COLLECTOR_SUBGRAPH: { [chainId in ChainId]: string } = {
     'https://api.thegraph.com/subgraphs/name/traderjoe-xyz/fee-collector-arbitrum',
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
-  [ChainId.BNB_TESTNET]: ''
+  [ChainId.BNB_TESTNET]: '',
+  [ChainId.ETHEREUM]: ''
 }
