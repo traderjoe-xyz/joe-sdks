@@ -7,12 +7,22 @@ export const LimitOrderManagerABI = [
     stateMutability: 'nonpayable',
     type: 'constructor'
   },
+  {
+    inputs: [],
+    name: 'LimitOrderManager__InsufficientWithdrawalAmounts',
+    type: 'error'
+  },
   { inputs: [], name: 'LimitOrderManager__InvalidBatchLength', type: 'error' },
+  {
+    inputs: [],
+    name: 'LimitOrderManager__InvalidExecutorFeeShare',
+    type: 'error'
+  },
   { inputs: [], name: 'LimitOrderManager__InvalidNativeAmount', type: 'error' },
-  { inputs: [], name: 'LimitOrderManager__InvalidOrder', type: 'error' },
   { inputs: [], name: 'LimitOrderManager__InvalidPair', type: 'error' },
   { inputs: [], name: 'LimitOrderManager__InvalidTokenOrder', type: 'error' },
-  { inputs: [], name: 'LimitOrderManager__NoOrdersToExecute', type: 'error' },
+  { inputs: [], name: 'LimitOrderManager__OnlyFactoryOwner', type: 'error' },
+  { inputs: [], name: 'LimitOrderManager__OnlyWNative', type: 'error' },
   {
     inputs: [],
     name: 'LimitOrderManager__OrderAlreadyExecuted',
@@ -21,22 +31,62 @@ export const LimitOrderManagerABI = [
   { inputs: [], name: 'LimitOrderManager__OrderNotClaimable', type: 'error' },
   { inputs: [], name: 'LimitOrderManager__OrderNotExecutable', type: 'error' },
   { inputs: [], name: 'LimitOrderManager__OrderNotPlaced', type: 'error' },
-  {
-    inputs: [],
-    name: 'LimitOrderManager__OrdersAlreadyExecuted',
-    type: 'error'
-  },
   { inputs: [], name: 'LimitOrderManager__TransferFailed', type: 'error' },
   { inputs: [], name: 'LimitOrderManager__ZeroAddress', type: 'error' },
   { inputs: [], name: 'LimitOrderManager__ZeroAmount', type: 'error' },
-  {
-    inputs: [],
-    name: 'LimitOrderManager__ZeroPositionLiquidity',
-    type: 'error'
-  },
   { inputs: [], name: 'PackedUint128Math__SubUnderflow', type: 'error' },
   { inputs: [], name: 'SafeCast__Exceeds128Bits', type: 'error' },
   { inputs: [], name: 'Uint256x256Math__MulDivOverflow', type: 'error' },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'executor',
+        type: 'address'
+      },
+      {
+        indexed: false,
+        internalType: 'contract IERC20',
+        name: 'tokenX',
+        type: 'address'
+      },
+      {
+        indexed: false,
+        internalType: 'contract IERC20',
+        name: 'tokenY',
+        type: 'address'
+      },
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'amountX',
+        type: 'uint256'
+      },
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'amountY',
+        type: 'uint256'
+      }
+    ],
+    name: 'ExecutionFeePaid',
+    type: 'event'
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'executorFeeShare',
+        type: 'uint256'
+      }
+    ],
+    name: 'ExecutorFeeShareSet',
+    type: 'event'
+  },
   {
     anonymous: false,
     inputs: [
@@ -234,9 +284,11 @@ export const LimitOrderManagerABI = [
             name: 'orderType',
             type: 'uint8'
           },
-          { internalType: 'uint24', name: 'binId', type: 'uint24' }
+          { internalType: 'uint24', name: 'binId', type: 'uint24' },
+          { internalType: 'uint256', name: 'minAmountX', type: 'uint256' },
+          { internalType: 'uint256', name: 'minAmountY', type: 'uint256' }
         ],
-        internalType: 'struct ILimitOrderManager.OrderParams[]',
+        internalType: 'struct ILimitOrderManager.CancelOrderParams[]',
         name: 'orders',
         type: 'tuple[]'
       }
@@ -260,9 +312,11 @@ export const LimitOrderManagerABI = [
             name: 'orderType',
             type: 'uint8'
           },
-          { internalType: 'uint24', name: 'binId', type: 'uint24' }
+          { internalType: 'uint24', name: 'binId', type: 'uint24' },
+          { internalType: 'uint256', name: 'minAmountX', type: 'uint256' },
+          { internalType: 'uint256', name: 'minAmountY', type: 'uint256' }
         ],
-        internalType: 'struct ILimitOrderManager.OrderParamsSamePair[]',
+        internalType: 'struct ILimitOrderManager.CancelOrderParamsSamePair[]',
         name: 'orders',
         type: 'tuple[]'
       }
@@ -347,6 +401,7 @@ export const LimitOrderManagerABI = [
     ],
     name: 'batchExecuteOrders',
     outputs: [
+      { internalType: 'bool[]', name: 'orderExecuted', type: 'bool[]' },
       { internalType: 'uint256[]', name: 'orderPositionIds', type: 'uint256[]' }
     ],
     stateMutability: 'nonpayable',
@@ -373,6 +428,7 @@ export const LimitOrderManagerABI = [
     ],
     name: 'batchExecuteOrdersSamePair',
     outputs: [
+      { internalType: 'bool[]', name: 'orderExecuted', type: 'bool[]' },
       { internalType: 'uint256[]', name: 'orderPositionIds', type: 'uint256[]' }
     ],
     stateMutability: 'nonpayable',
@@ -400,6 +456,7 @@ export const LimitOrderManagerABI = [
     ],
     name: 'batchPlaceOrders',
     outputs: [
+      { internalType: 'bool[]', name: 'orderPlaced', type: 'bool[]' },
       { internalType: 'uint256[]', name: 'orderPositionIds', type: 'uint256[]' }
     ],
     stateMutability: 'payable',
@@ -427,6 +484,7 @@ export const LimitOrderManagerABI = [
     ],
     name: 'batchPlaceOrdersSamePair',
     outputs: [
+      { internalType: 'bool[]', name: 'orderPlaced', type: 'bool[]' },
       { internalType: 'uint256[]', name: 'orderPositionIds', type: 'uint256[]' }
     ],
     stateMutability: 'payable',
@@ -442,7 +500,9 @@ export const LimitOrderManagerABI = [
         name: 'orderType',
         type: 'uint8'
       },
-      { internalType: 'uint24', name: 'binId', type: 'uint24' }
+      { internalType: 'uint24', name: 'binId', type: 'uint24' },
+      { internalType: 'uint256', name: 'minAmountX', type: 'uint256' },
+      { internalType: 'uint256', name: 'minAmountY', type: 'uint256' }
     ],
     name: 'cancelOrder',
     outputs: [
@@ -483,7 +543,10 @@ export const LimitOrderManagerABI = [
       { internalType: 'uint24', name: 'binId', type: 'uint24' }
     ],
     name: 'executeOrders',
-    outputs: [{ internalType: 'uint256', name: 'positionId', type: 'uint256' }],
+    outputs: [
+      { internalType: 'bool', name: 'executed', type: 'bool' },
+      { internalType: 'uint256', name: 'positionId', type: 'uint256' }
+    ],
     stateMutability: 'nonpayable',
     type: 'function'
   },
@@ -503,8 +566,28 @@ export const LimitOrderManagerABI = [
     name: 'getCurrentAmounts',
     outputs: [
       { internalType: 'uint256', name: 'amountX', type: 'uint256' },
-      { internalType: 'uint256', name: 'amountY', type: 'uint256' }
+      { internalType: 'uint256', name: 'amountY', type: 'uint256' },
+      { internalType: 'uint256', name: 'executionFeeX', type: 'uint256' },
+      { internalType: 'uint256', name: 'executionFeeY', type: 'uint256' }
     ],
+    stateMutability: 'view',
+    type: 'function'
+  },
+  {
+    inputs: [
+      { internalType: 'contract IERC20', name: 'tokenX', type: 'address' },
+      { internalType: 'contract IERC20', name: 'tokenY', type: 'address' },
+      { internalType: 'uint16', name: 'binStep', type: 'uint16' }
+    ],
+    name: 'getExecutionFee',
+    outputs: [{ internalType: 'uint256', name: 'fee', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function'
+  },
+  {
+    inputs: [],
+    name: 'getExecutorFeeShare',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
     stateMutability: 'view',
     type: 'function'
   },
@@ -592,6 +675,13 @@ export const LimitOrderManagerABI = [
     type: 'function'
   },
   {
+    inputs: [],
+    name: 'getWNative',
+    outputs: [{ internalType: 'contract IERC20', name: '', type: 'address' }],
+    stateMutability: 'view',
+    type: 'function'
+  },
+  {
     inputs: [
       { internalType: 'contract IERC20', name: 'tokenX', type: 'address' },
       { internalType: 'contract IERC20', name: 'tokenY', type: 'address' },
@@ -630,9 +720,20 @@ export const LimitOrderManagerABI = [
     ],
     name: 'placeOrder',
     outputs: [
+      { internalType: 'bool', name: 'orderPlaced', type: 'bool' },
       { internalType: 'uint256', name: 'orderPositionId', type: 'uint256' }
     ],
     stateMutability: 'payable',
     type: 'function'
-  }
+  },
+  {
+    inputs: [
+      { internalType: 'uint256', name: 'executorFeeShare', type: 'uint256' }
+    ],
+    name: 'setExecutorFeeShare',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
+  },
+  { stateMutability: 'payable', type: 'receive' }
 ] as const
