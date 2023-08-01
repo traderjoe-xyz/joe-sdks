@@ -1,5 +1,16 @@
 # @traderjoe-xyz/sdk-v2
 
+## 2.1.0
+
+### Minor Changes
+
+- 8065d41: Add support for Ethereum
+
+### Patch Changes
+
+- Updated dependencies [8065d41]
+  - @traderjoe-xyz/sdk-core@1.1.0
+
 ## 2.0.12
 
 ### Patch Changes
