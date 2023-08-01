@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 2.0.12
+
+### Patch Changes
+
+- cd2ce5e: Update limit order manager and quoter v21 ABI
+
 ## 2.0.11
 
 ### Patch Changes
