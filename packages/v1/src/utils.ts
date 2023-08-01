@@ -5,7 +5,8 @@ import {
   avalanche,
   avalancheFuji,
   bsc,
-  bscTestnet
+  bscTestnet,
+  mainnet
 } from 'viem/chains'
 
 import { ChainId } from '@traderjoe-xyz/sdk-core'
@@ -32,5 +33,7 @@ export const getChain = (chainId: ChainId) => {
       return bsc
     case ChainId.BNB_TESTNET:
       return bscTestnet
+    case ChainId.ETHEREUM:
+      return mainnet
   }
 }
