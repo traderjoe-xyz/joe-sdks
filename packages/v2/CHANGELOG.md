@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 2.1.3
+
+### Patch Changes
+
+- a774142: add apt-farm-lens addresses
+
 ## 2.1.2
 
 ### Patch Changes
