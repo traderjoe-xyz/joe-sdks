@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 2.1.2
+
+### Patch Changes
+
+- 6168dc8: add apt-farm-lens abi
+
 ## 2.1.1
 
 ### Patch Changes
