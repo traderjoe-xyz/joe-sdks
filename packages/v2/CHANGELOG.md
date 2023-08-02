@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 2.1.4
+
+### Patch Changes
+
+- c8a3d73: expose contract address
+
 ## 2.1.3
 
 ### Patch Changes
