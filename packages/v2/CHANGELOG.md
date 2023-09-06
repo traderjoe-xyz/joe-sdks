@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 2.1.5
+
+### Patch Changes
+
+- f8731f5: fix getUniformDistributionFromBinRange
+
 ## 2.1.4
 
 ### Patch Changes
