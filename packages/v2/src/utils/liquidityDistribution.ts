@@ -79,14 +79,14 @@ export const getUniformDistributionFromBinRange = (
 ): LiquidityDistributionParams => {
   const ONE = BigInt(10) ** BigInt(18)
 
-  let deltaIds: number[] = []
-  let distributionX: bigint[] = []
-  let distributionY: bigint[] = []
+  const deltaIds: number[] = []
+  const distributionX: bigint[] = []
+  const distributionY: bigint[] = []
 
   let nb_x = BigInt(0)
   let nb_y = BigInt(0)
 
-  for (var binId = binRange[0]; binId <= binRange[1]; binId++) {
+  for (let binId = binRange[0]; binId <= binRange[1]; binId++) {
     if (binId > activeId) {
       nb_x += BigInt(2)
     } else if (binId < activeId) {
@@ -97,7 +97,7 @@ export const getUniformDistributionFromBinRange = (
     }
   }
 
-  for (var binId = binRange[0]; binId <= binRange[1]; binId++) {
+  for (let binId = binRange[0]; binId <= binRange[1]; binId++) {
     if (binId > activeId) {
       distributionX.push((BigInt(2) * ONE) / nb_x)
       distributionY.push(BigInt(0))
