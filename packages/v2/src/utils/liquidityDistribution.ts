@@ -71,92 +71,50 @@ export const normalizeDist = (
  *
  * @param {number} activeId
  * @param {number[]} binRange
- * @param {CurrencyAmount[]} parsedAmounts
  * @returns
  */
 export const getUniformDistributionFromBinRange = (
   activeId: number,
-  binRange: number[],
-  parsedAmounts: CurrencyAmount[]
+  binRange: number[]
 ): LiquidityDistributionParams => {
-  const [parsedAmountA, parsedAmountB] = parsedAmounts
+  const ONE = BigInt(10) ** BigInt(18)
 
-  // init return values
-  let deltaIds: number[] = [],
-    _distributionX: number[] = [],
-    _distributionY: number[] = []
+  const deltaIds: number[] = []
+  const distributionX: bigint[] = []
+  const distributionY: bigint[] = []
 
-  // range only includes B tokens (Y tokens)
-  if (binRange[1] <= activeId && parsedAmountA.raw.toString() === '0') {
-    const negDelta = binRange[1] - binRange[0] + 1
-    const negativeDeltaIds = Array.from(Array(activeId - binRange[0]).keys())
-      .reverse()
-      .slice(0, negDelta)
-      .map((el) => -1 * (el + 1))
+  let nb_x = BigInt(0)
+  let nb_y = BigInt(0)
 
-    deltaIds = [...negativeDeltaIds]
-    if (activeId === binRange[1]) {
-      deltaIds.push(0)
+  for (let binId = binRange[0]; binId <= binRange[1]; binId++) {
+    if (binId > activeId) {
+      nb_x += BigInt(2)
+    } else if (binId < activeId) {
+      nb_y += BigInt(2)
+    } else {
+      nb_x += BigInt(1)
+      nb_y += BigInt(1)
     }
-
-    _distributionX = [...Array(deltaIds.length).fill(0)]
-    _distributionY = [...Array(negDelta).fill(1 / negDelta)]
   }
 
-  // range only includes A tokens (X tokens)
-  else if (activeId <= binRange[0] && parsedAmountB.raw.toString() === '0') {
-    const posDelta = binRange[1] - binRange[0] + 1
-    const positiveDeltaIds = Array.from(Array(binRange[1] - activeId).keys())
-      .reverse()
-      .slice(0, posDelta)
-      .reverse()
-      .map((el) => el + 1)
-
-    deltaIds = [...positiveDeltaIds]
-    if (activeId === binRange[0]) {
-      deltaIds.unshift(0)
+  for (let binId = binRange[0]; binId <= binRange[1]; binId++) {
+    if (binId > activeId) {
+      distributionX.push((BigInt(2) * ONE) / nb_x)
+      distributionY.push(BigInt(0))
+    } else if (binId < activeId) {
+      distributionX.push(BigInt(0))
+      distributionY.push((BigInt(2) * ONE) / nb_y)
+    } else {
+      distributionX.push(ONE / nb_x)
+      distributionY.push(ONE / nb_y)
     }
-
-    _distributionX = [...Array(posDelta).fill(1 / posDelta)]
-    _distributionY = [...Array(deltaIds.length).fill(0)]
+    deltaIds.push(binId - activeId)
   }
 
-  // range includes both X and Y tokens
-  else {
-    const negDelta = activeId - binRange[0]
-    const posDelta = binRange[1] - activeId
-
-    const negativeDeltaIds = Array.from(Array(negDelta).keys())
-      .reverse()
-      .map((el) => -1 * (el + 1))
-    const positiveDeltaIds = Array.from(Array(posDelta).keys()).map(
-      (el) => el + 1
-    )
-    deltaIds = [...negativeDeltaIds, 0, ...positiveDeltaIds]
-
-    const posPctPerBin = 1 / (0.5 + posDelta)
-    const negPctPerBin = 1 / (0.5 + negDelta)
-    _distributionX = [
-      ...Array(negDelta).fill(0),
-      posPctPerBin / 2,
-      ...Array(posDelta).fill(posPctPerBin)
-    ]
-    _distributionY = [
-      ...Array(negDelta).fill(negPctPerBin),
-      negPctPerBin / 2,
-      ...Array(posDelta).fill(0)
-    ]
-  }
-
-  // return
   return {
     deltaIds,
-    distributionX: _distributionX.map((el) =>
-      parseDistributionValue(el, parsedAmountA.currency.decimals)
-    ),
-    distributionY: _distributionY.map((el) =>
-      parseDistributionValue(el, parsedAmountB.currency.decimals)
-    )
+    distributionX,
+    distributionY
   }
 }
 
