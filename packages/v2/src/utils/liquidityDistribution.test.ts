@@ -1,7 +1,8 @@
 import { it, expect } from 'vitest'
 import {
   getUniformDistributionFromBinRange,
-  getBidAskDistributionFromBinRange
+  getBidAskDistributionFromBinRange,
+  getCurveDistributionFromBinRange
 } from './liquidityDistribution'
 import { CurrencyAmount, Token, TokenAmount } from '@traderjoe-xyz/sdk-core'
 import { parseEther } from 'viem'
@@ -102,6 +103,57 @@ it('getBidAskDistributionFromBinRange works', () => {
     BigInt('146341463414634146'),
     BigInt('97560975609756097'),
     BigInt('24390243902439024'),
+    BigInt(0),
+    BigInt(0),
+    BigInt(0),
+    BigInt(0),
+    BigInt(0)
+  ])
+  // expect(sumDistributionX).toEqual(BigInt(10) ** BigInt(18) - BigInt(1))
+  // expect(sumDistributionY).toEqual(BigInt(10) ** BigInt(18) - BigInt(1))
+})
+
+it('getCurveDistributionFromBinRange works', () => {
+  const activeId = 8376038
+  const amountA = CurrencyAmount.ether(43113, parseEther('1'))
+  const amountB = new TokenAmount(token0, parseEther('0.5'))
+
+  const params = getCurveDistributionFromBinRange(
+    activeId,
+    [activeId - 5, activeId + 5],
+    [amountA, amountB]
+  )
+
+  const sumDistributionX = params.distributionX.reduce(
+    (a, b) => a + b,
+    BigInt(0)
+  )
+  const sumDistributionY = params.distributionY.reduce(
+    (a, b) => a + b,
+    BigInt(0)
+  )
+
+  expect(params.deltaIds).toEqual([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5])
+  expect(params.distributionX).toEqual([
+    BigInt(0),
+    BigInt(0),
+    BigInt(0),
+    BigInt(0),
+    BigInt(0),
+    BigInt('139235091095125611'),
+    BigInt('264309887127866457'),
+    BigInt('226004736020696260'),
+    BigInt('174096921395845034'),
+    BigInt('120818673548873833'),
+    BigInt('75534690811592802')
+  ])
+  expect(params.distributionY).toEqual([
+    BigInt('75534690811592802'),
+    BigInt('120818673548873833'),
+    BigInt('174096921395845034'),
+    BigInt('226004736020696260'),
+    BigInt('264309887127866457'),
+    BigInt('139235091095125611'),
     BigInt(0),
     BigInt(0),
     BigInt(0),
