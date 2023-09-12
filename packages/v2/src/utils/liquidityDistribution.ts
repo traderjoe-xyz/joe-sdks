@@ -133,7 +133,6 @@ export const getBidAskDistributionFromBinRange = (
 ): LiquidityDistributionParams => {
   const [parsedAmountA, parsedAmountB] = parsedAmounts
 
-  const ONE = BigInt(10) ** BigInt(18)
   const deltaIds: number[] = []
   const distributionX: bigint[] = []
   const distributionY: bigint[] = []
@@ -163,7 +162,7 @@ export const getBidAskDistributionFromBinRange = (
     let dist_x = BigInt(0)
     let dist_y = BigInt(0)
 
-    let weight = ONE * (BigInt(Math.abs(binId - activeId)) + BigInt(1))
+    const weight = parseEther(`${Math.abs(binId - activeId) + 1}`)
 
     if (binId >= activeId && parsedAmountA.greaterThan('0')) {
       dist_x = (BigInt(2) * weight) / BigInt(nb_x)
@@ -235,7 +234,7 @@ export const getCurveDistributionFromBinRange = (
   let nb_y = BigInt(0)
 
   for (let binId = binRange[0]; binId <= binRange[1]; binId++) {
-    let deltaId = binId - activeId
+    const deltaId = binId - activeId
     let dist_x = BigInt(0)
     let dist_y = BigInt(0)
 
