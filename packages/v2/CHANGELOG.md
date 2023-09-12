@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 2.1.6
+
+### Patch Changes
+
+- 75d84d4: rewrite get distribution params functions
+
 ## 2.1.5
 
 ### Patch Changes
