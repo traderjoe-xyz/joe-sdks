@@ -118,6 +118,9 @@ importers:
       '@traderjoe-xyz/sdk-core':
         specifier: workspace:^
         version: link:../core
+      big.js:
+        specifier: ^6.2.1
+        version: 6.2.1
       jsbi:
         specifier: ^4.3.0
         version: 4.3.0

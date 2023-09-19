@@ -1,5 +1,5 @@
 import { CurrencyAmount } from '@traderjoe-xyz/sdk-core'
-
+import { Big } from 'big.js'
 import { spotUniform, curve, bidAsk } from '../constants'
 import {
   LiquidityDistribution,
@@ -201,13 +201,19 @@ export const getBidAskDistributionFromBinRange = (
  * @param {number} activeId
  * @param {number[]} binRange
  * @param {CurrencyAmount[]} parsedAmounts
+ * @param {number} alpha
  * @returns
  */
 export const getCurveDistributionFromBinRange = (
   activeId: number,
   binRange: number[],
-  parsedAmounts: CurrencyAmount[]
+  parsedAmounts: CurrencyAmount[],
+  alpha: number = 1 / 10
 ): LiquidityDistributionParams => {
+  if (alpha > 1) {
+    throw new Error('Alpha must be between 0 and 1')
+  }
+
   const [parsedAmountA, parsedAmountB] = parsedAmounts
 
   const ONE = BigInt(10) ** BigInt(18)
@@ -216,19 +222,29 @@ export const getCurveDistributionFromBinRange = (
   const distributionX: bigint[] = []
   const distributionY: bigint[] = []
 
+  Big.RM = Big.roundDown
   const getGaussianDistribution = (x: number, sigma: number): bigint => {
-    return parseEther(`${Math.exp(-((x / sigma) ** 2) / 2)}`)
+    if (sigma === 0) return BigInt(0)
+
+    const val = new Big(Math.exp(-((x / sigma) ** 2) / 2))
+      .times(10 ** 18)
+      .round()
+    const int = BigInt(val.toString())
+    return int
   }
 
-  const getSigma = (radius: number): number => {
-    return radius / Math.sqrt(1 + Math.log(radius))
+  const getSigma = (radius: number, alpha: number): number => {
+    const denominator = Math.sqrt(-2 * Math.log(alpha))
+    if (denominator === 0) return 0
+
+    return radius / denominator
   }
 
-  const radius_x = Math.abs(binRange[0] - activeId)
-  const radius_y = Math.abs(binRange[1] - activeId)
+  const radius_x = Math.abs(binRange[1] - activeId)
+  const radius_y = Math.abs(binRange[0] - activeId)
 
-  const sigma_x = getSigma(radius_x)
-  const sigma_y = getSigma(radius_y)
+  const sigma_x = getSigma(radius_x, alpha)
+  const sigma_y = getSigma(radius_y, alpha)
 
   let nb_x = BigInt(0)
   let nb_y = BigInt(0)
