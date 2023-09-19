@@ -212,20 +212,20 @@ it('getCurveDistributionFromBinRange with amount X and Y', () => {
     BigInt(0),
     BigInt(0),
     BigInt(0),
-    BigInt('139235091095125611'),
-    BigInt('264309887127866457'),
-    BigInt('226004736020696260'),
-    BigInt('174096921395845034'),
-    BigInt('120818673548873833'),
-    BigInt('75534690811592802')
+    BigInt('174249760212214784'),
+    BigInt('317835340137416041'),
+    BigInt('241102761580016849'),
+    BigInt('152125558193368601'),
+    BigInt('79836627834540759'),
+    BigInt('34849952042442963')
   ])
   expect(params.distributionY).toEqual([
-    BigInt('75534690811592802'),
-    BigInt('120818673548873833'),
-    BigInt('174096921395845034'),
-    BigInt('226004736020696260'),
-    BigInt('264309887127866457'),
-    BigInt('139235091095125611'),
+    BigInt('34849952042442963'),
+    BigInt('79836627834540759'),
+    BigInt('152125558193368601'),
+    BigInt('241102761580016849'),
+    BigInt('317835340137416041'),
+    BigInt('174249760212214784'),
     BigInt(0),
     BigInt(0),
     BigInt(0),
@@ -254,12 +254,12 @@ it('getCurveDistributionFromBinRange with amount X only', () => {
 
   expect(params.deltaIds).toEqual([0, 1, 2, 3, 4, 5])
   expect(params.distributionX).toEqual([
-    BigInt('244436099596057025'),
-    BigInt('232006448180761579'),
-    BigInt('198382877939128516'),
-    BigInt('152819135187004190'),
-    BigInt('106052450888545820'),
-    BigInt('66302988208502866')
+    BigInt('296784834225937962'),
+    BigInt('270670985770502227'),
+    BigInt('205324940016546276'),
+    BigInt('129551278908395012'),
+    BigInt('67989477656024718'),
+    BigInt('29678483422593802')
   ])
   expect(params.distributionY).toEqual([
     BigInt('0'),
@@ -298,12 +298,54 @@ it('getCurveDistributionFromBinRange with amount Y only', () => {
     BigInt('0')
   ])
   expect(params.distributionY).toEqual([
-    BigInt('66302988208502866'),
-    BigInt('106052450888545820'),
-    BigInt('152819135187004190'),
-    BigInt('198382877939128516'),
-    BigInt('232006448180761579'),
-    BigInt('244436099596057025')
+    BigInt('29678483422593802'),
+    BigInt('67989477656024718'),
+    BigInt('129551278908395012'),
+    BigInt('205324940016546276'),
+    BigInt('270670985770502227'),
+    BigInt('296784834225937962')
   ])
+  expect(sumDistributionY).toBeLessThan(BigInt(10) ** BigInt(18) - BigInt(1))
+})
+
+it('getCurveDistributionFromBinRange with bin range below active bin', () => {
+  const activeId = 8376038
+  const amountA = CurrencyAmount.ether(43113, parseEther('0'))
+  const amountB = new TokenAmount(token0, parseEther('1'))
+
+  const params = getCurveDistributionFromBinRange(
+    activeId,
+    [activeId - 50, activeId - 5],
+    [amountA, amountB]
+  )
+
+  const sumDistributionY = params.distributionY.reduce(
+    (a, b) => a + b,
+    BigInt(0)
+  )
+
+  const expectedDeltaIds = Array.from(Array(46).keys()).map((i) => i - 50)
+  expect(params.deltaIds).toEqual(expectedDeltaIds)
+  expect(sumDistributionY).toBeLessThan(BigInt(10) ** BigInt(18) - BigInt(1))
+})
+
+it('getCurveDistributionFromBinRange with bin range above active bin', () => {
+  const activeId = 8376038
+  const amountA = CurrencyAmount.ether(43113, parseEther('1'))
+  const amountB = new TokenAmount(token0, parseEther('0'))
+
+  const params = getCurveDistributionFromBinRange(
+    activeId,
+    [activeId + 5, activeId + 50],
+    [amountA, amountB]
+  )
+
+  const sumDistributionY = params.distributionY.reduce(
+    (a, b) => a + b,
+    BigInt(0)
+  )
+
+  const expectedDeltaIds = Array.from(Array(46).keys()).map((i) => i + 5)
+  expect(params.deltaIds).toEqual(expectedDeltaIds)
   expect(sumDistributionY).toBeLessThan(BigInt(10) ** BigInt(18) - BigInt(1))
 })
