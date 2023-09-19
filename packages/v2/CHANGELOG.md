@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 2.1.7
+
+### Patch Changes
+
+- 498eb52: fix get curve distribution params
+
 ## 2.1.6
 
 ### Patch Changes
