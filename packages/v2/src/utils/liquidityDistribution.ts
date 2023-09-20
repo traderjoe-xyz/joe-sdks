@@ -224,7 +224,7 @@ export const getCurveDistributionFromBinRange = (
 
   Big.RM = Big.roundDown
   const getGaussianDistribution = (x: number, sigma: number): bigint => {
-    if (sigma === 0) return BigInt(0)
+    if (sigma === 0) return BigInt(10 ** 18)
 
     const val = new Big(Math.exp(-((x / sigma) ** 2) / 2))
       .times(10 ** 18)
