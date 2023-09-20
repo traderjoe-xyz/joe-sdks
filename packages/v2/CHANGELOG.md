@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 2.1.8
+
+### Patch Changes
+
+- 6d5a6e3: fix getCurveDistributionFromBinRange when sigma is 0
+
 ## 2.1.7
 
 ### Patch Changes
