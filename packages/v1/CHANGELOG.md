@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk
 
+## 4.1.1
+
+### Patch Changes
+
+- 3dfd4a5: update farm lens v2 address
+
 ## 4.1.0
 
 ### Minor Changes
