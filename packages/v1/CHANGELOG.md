@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk
 
+## 4.1.2
+
+### Patch Changes
+
+- 8a0aa52: update boring helper address
+
 ## 4.1.1
 
 ### Patch Changes
