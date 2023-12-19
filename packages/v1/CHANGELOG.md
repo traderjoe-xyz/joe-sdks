@@ -1,5 +1,16 @@
 # @traderjoe-xyz/sdk
 
+## 5.0.0
+
+### Major Changes
+
+- 9ab3159: add mantle chain id
+
+### Patch Changes
+
+- Updated dependencies [9ab3159]
+  - @traderjoe-xyz/sdk-core@2.0.0
+
 ## 4.1.2
 
 ### Patch Changes
