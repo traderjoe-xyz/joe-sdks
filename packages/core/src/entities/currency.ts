@@ -50,11 +50,15 @@ export class CNATIVE extends NativeCurrency {
       ? 'BNB'
       : 97 === chainId
       ? 'tBNB'
+      : 5000 === chainId
+      ? 'MNT'
       : 'ETH'
     const name = [43113, 43114].includes(chainId)
       ? 'Avalanche'
       : [56, 97].includes(chainId)
       ? 'BNB'
+      : 5000 === chainId
+      ? 'Mantle'
       : 'Ethereum'
     super(chainId, 18, symbol, name)
   }

@@ -10,7 +10,8 @@ export enum ChainId {
   ARB_GOERLI = 421613,
   BNB_CHAIN = 56,
   BNB_TESTNET = 97,
-  ETHEREUM = 1
+  ETHEREUM = 1,
+  MANTLE = 5000
 }
 
 export enum TradeType {

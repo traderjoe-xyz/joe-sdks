@@ -13,7 +13,8 @@ export const EXCHANGE_SUBGRAPH: { [chainId in ChainId]: string } = {
     'https://api.thegraph.com/subgraphs/name/traderjoe-xyz/joe-v1-bnb',
   [ChainId.BNB_TESTNET]:
     'https://api.thegraph.com/subgraphs/name/traderjoe-xyz/joe-v1-bnbtest',
-  [ChainId.ETHEREUM]: ''
+  [ChainId.ETHEREUM]: '',
+  [ChainId.MANTLE]: ''
 }
 
 export const MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -25,7 +26,8 @@ export const MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
   [ChainId.BNB_TESTNET]: '',
-  [ChainId.ETHEREUM]: ''
+  [ChainId.ETHEREUM]: '',
+  [ChainId.MANTLE]: ''
 }
 
 export const DEXCANDLES_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -37,7 +39,8 @@ export const DEXCANDLES_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
   [ChainId.BNB_TESTNET]: '',
-  [ChainId.ETHEREUM]: ''
+  [ChainId.ETHEREUM]: '',
+  [ChainId.MANTLE]: ''
 }
 
 export const BAR_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -48,7 +51,8 @@ export const BAR_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
   [ChainId.BNB_TESTNET]: '',
-  [ChainId.ETHEREUM]: ''
+  [ChainId.ETHEREUM]: '',
+  [ChainId.MANTLE]: ''
 }
 
 export const LENDING_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -60,7 +64,8 @@ export const LENDING_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
   [ChainId.BNB_TESTNET]: '',
-  [ChainId.ETHEREUM]: ''
+  [ChainId.ETHEREUM]: '',
+  [ChainId.MANTLE]: ''
 }
 
 export const ROCKET_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -72,7 +77,8 @@ export const ROCKET_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
   [ChainId.BNB_TESTNET]: '',
-  [ChainId.ETHEREUM]: ''
+  [ChainId.ETHEREUM]: '',
+  [ChainId.MANTLE]: ''
 }
 
 export const SJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -85,7 +91,8 @@ export const SJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
   [ChainId.BNB_TESTNET]: '',
-  [ChainId.ETHEREUM]: ''
+  [ChainId.ETHEREUM]: '',
+  [ChainId.MANTLE]: ''
 }
 
 export const MONEY_MAKER_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -97,7 +104,8 @@ export const MONEY_MAKER_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
   [ChainId.BNB_TESTNET]: '',
-  [ChainId.ETHEREUM]: ''
+  [ChainId.ETHEREUM]: '',
+  [ChainId.MANTLE]: ''
 }
 
 export const VEJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -109,7 +117,8 @@ export const VEJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
   [ChainId.BNB_TESTNET]: '',
-  [ChainId.ETHEREUM]: ''
+  [ChainId.ETHEREUM]: '',
+  [ChainId.MANTLE]: ''
 }
 
 export const BOOSTED_MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -121,7 +130,8 @@ export const BOOSTED_MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
   [ChainId.BNB_TESTNET]: '',
-  [ChainId.ETHEREUM]: ''
+  [ChainId.ETHEREUM]: '',
+  [ChainId.MANTLE]: ''
 }
 
 export const NFT_CONTRACTS_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -133,7 +143,8 @@ export const NFT_CONTRACTS_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
   [ChainId.BNB_TESTNET]: '',
-  [ChainId.ETHEREUM]: ''
+  [ChainId.ETHEREUM]: '',
+  [ChainId.MANTLE]: ''
 }
 
 export const JOEPEG_MARKETPLACE_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -145,7 +156,8 @@ export const JOEPEG_MARKETPLACE_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
   [ChainId.BNB_TESTNET]: '',
-  [ChainId.ETHEREUM]: ''
+  [ChainId.ETHEREUM]: '',
+  [ChainId.MANTLE]: ''
 }
 
 export const FEE_COLLECTOR_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -157,5 +169,6 @@ export const FEE_COLLECTOR_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.ARB_GOERLI]: '',
   [ChainId.BNB_CHAIN]: '',
   [ChainId.BNB_TESTNET]: '',
-  [ChainId.ETHEREUM]: ''
+  [ChainId.ETHEREUM]: '',
+  [ChainId.MANTLE]: ''
 }
