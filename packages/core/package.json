@@ -28,11 +28,11 @@
     "toformat": "^2.0.0"
   },
   "peerDependencies": {
-    "viem": ">=0.3.35"
+    "viem": ">=2.5.0"
   },
   "devDependencies": {
     "@types/big.js": "^6.1.6",
-    "viem": "^0.3.50"
+    "viem": "^2.5.0"
   },
   "engines": {
     "node": ">=14"
