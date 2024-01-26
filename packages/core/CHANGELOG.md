@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-core
 
+## 2.0.1
+
+### Patch Changes
+
+- 6e905b7: bump viem to v2
+
 ## 2.0.0
 
 ### Major Changes

@@ -1,5 +1,13 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.1
+
+### Patch Changes
+
+- 6e905b7: bump viem to v2
+- Updated dependencies [6e905b7]
+  - @traderjoe-xyz/sdk-core@2.0.1
+
 ## 3.0.0
 
 ### Major Changes
