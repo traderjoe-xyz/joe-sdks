@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.2
+
+### Patch Changes
+
+- c0407d8: add mantle addresses
+
 ## 3.0.1
 
 ### Patch Changes
