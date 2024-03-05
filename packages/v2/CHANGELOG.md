@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.3
+
+### Patch Changes
+
+- 72c1ef4: update mantle quoter address
+
 ## 3.0.2
 
 ### Patch Changes
