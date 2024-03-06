@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.4
+
+### Patch Changes
+
+- 83d17ba: update contract addresses
+
 ## 3.0.3
 
 ### Patch Changes
