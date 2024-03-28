@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.5
+
+### Patch Changes
+
+- e744663: update mantle addresses
+
 ## 3.0.4
 
 ### Patch Changes
