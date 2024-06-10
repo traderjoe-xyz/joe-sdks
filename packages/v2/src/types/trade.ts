@@ -4,7 +4,8 @@ import { Hex } from 'viem'
 export enum PoolVersion {
   V1 = 0,
   V2 = 1,
-  V2_1 = 2
+  V2_1 = 2,
+  V2_2 = 3
 }
 
 /** Interface representing a quote */

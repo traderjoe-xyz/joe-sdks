@@ -18,6 +18,8 @@ import { RouteV2 } from './route'
 import {
   LB_QUOTER_V21_ADDRESS,
   LB_ROUTER_V21_ADDRESS,
+  LB_QUOTER_V22_ADDRESS,
+  LB_ROUTER_V22_ADDRESS,
   ZERO_HEX
 } from '../constants'
 import { toHex, validateAndParseAddress, isZero } from '../utils'
@@ -31,7 +33,7 @@ import {
 } from '../types'
 
 import { LBQuoterV21ABI, LBRouterV21ABI } from '../abis/ts'
-import { Hex, PublicClient, encodeFunctionData } from 'viem'
+import { Hex, PublicClient, encodeFunctionData, zeroAddress } from 'viem'
 
 /** Class representing a trade */
 export class TradeV2 {
@@ -309,10 +311,15 @@ export class TradeV2 {
     const { methodName, args, value }: SwapParameters =
       this.swapCallParameters(options)
 
+    const routerAddress =
+      LB_ROUTER_V22_ADDRESS[chainId] === zeroAddress
+        ? LB_ROUTER_V21_ADDRESS[chainId]
+        : LB_ROUTER_V22_ADDRESS[chainId]
+
     const gasEstimate = await publicClient.estimateGas({
       blockTag: 'latest',
       account,
-      to: LB_ROUTER_V21_ADDRESS[chainId],
+      to: routerAddress,
       data: encodeFunctionData({
         abi: LBRouterV21ABI,
         functionName: methodName as any,
@@ -360,10 +367,15 @@ export class TradeV2 {
     const amountIn = BigInt(tokenAmountIn.raw.toString())
 
     try {
+      const quoterAddress =
+        LB_QUOTER_V22_ADDRESS[chainId] === zeroAddress
+          ? LB_QUOTER_V21_ADDRESS[chainId]
+          : LB_QUOTER_V22_ADDRESS[chainId]
+
       const calls = routes.map((route) => {
         return {
           abi: LBQuoterV21ABI,
-          address: LB_QUOTER_V21_ADDRESS[chainId],
+          address: quoterAddress,
           functionName: 'findBestPathFromAmountIn',
           args: [route.pathToStrArr(), amountIn]
         } as const
@@ -434,10 +446,15 @@ export class TradeV2 {
     const amountOut = BigInt(tokenAmountOut.raw.toString())
 
     try {
+      const quoterAddress =
+        LB_QUOTER_V22_ADDRESS[chainId] === zeroAddress
+          ? LB_QUOTER_V21_ADDRESS[chainId]
+          : LB_QUOTER_V22_ADDRESS[chainId]
+
       const calls = routes.map((route) => {
         return {
           abi: LBQuoterV21ABI,
-          address: LB_QUOTER_V21_ADDRESS[chainId],
+          address: quoterAddress,
           functionName: 'findBestPathFromAmountOut',
           args: [route.pathToStrArr(), amountOut]
         } as const

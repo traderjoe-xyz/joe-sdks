@@ -38,26 +38,26 @@ describe('PairV2 entity', () => {
   })
 
   it('can fetch all available v2 LBPairs', async () => {
-    const LBPairs = await pair1.fetchAvailableLBPairs(false, CLIENT, CHAIN_ID)
+    const LBPairs = await pair1.fetchAvailableLBPairs('v2', CLIENT, CHAIN_ID)
     expect(LBPairs.length).toBeGreaterThan(0)
   })
 
   it('can fetch single v2 LBPair given the bin step', async () => {
     const binStep = 10
-    const LBPair = await pair1.fetchLBPair(binStep, false, CLIENT, CHAIN_ID)
+    const LBPair = await pair1.fetchLBPair(binStep, 'v2', CLIENT, CHAIN_ID)
     expect(LBPair.binStep).toEqual(binStep)
     expect(LBPair.LBPair).not.toBeUndefined()
   })
 
   it('can fetch all available v2.1 LBPairs', async () => {
-    const LBPairs = await pair1.fetchAvailableLBPairs(true, CLIENT, CHAIN_ID)
+    const LBPairs = await pair1.fetchAvailableLBPairs('v21', CLIENT, CHAIN_ID)
     expect(LBPairs.length).toBeGreaterThan(0)
   })
 
   it('can fetch single v2.1 LBPair given the bin step', async () => {
-    const binStep = 10
-    const LBPair = await pair1.fetchLBPair(binStep, false, CLIENT, CHAIN_ID)
-    expect(LBPair.binStep).toEqual(binStep)
+    const binStep = 20
+    const LBPair = await pair1.fetchLBPair(binStep, 'v21', CLIENT, CHAIN_ID)
+    expect(LBPair.binStep).toEqual(20)
     expect(LBPair.LBPair).not.toBeUndefined()
   })
 
@@ -99,12 +99,11 @@ describe('PairV2 entity', () => {
   describe('PairV2.getLBPairReservesAndId()', () => {
     it('can fetch LBPair v2 reserves and activeId', async () => {
       const binStep = 10
-      const isV21 = false
-      const LBPair = await pair1.fetchLBPair(binStep, isV21, CLIENT, CHAIN_ID)
+      const LBPair = await pair1.fetchLBPair(binStep, 'v2', CLIENT, CHAIN_ID)
 
       const lbPairData = await PairV2.getLBPairReservesAndId(
         LBPair.LBPair,
-        isV21,
+        'v2',
         CLIENT
       )
 
@@ -115,12 +114,11 @@ describe('PairV2 entity', () => {
 
     it('can fetch LBPair v2.1 reserves and activeId', async () => {
       const binStep = 20
-      const isV21 = true
-      const LBPair = await pair1.fetchLBPair(binStep, isV21, CLIENT, CHAIN_ID)
+      const LBPair = await pair1.fetchLBPair(binStep, 'v21', CLIENT, CHAIN_ID)
 
       const lbPairData = await PairV2.getLBPairReservesAndId(
         LBPair.LBPair,
-        isV21,
+        'v21',
         CLIENT
       )
 
@@ -133,7 +131,7 @@ describe('PairV2 entity', () => {
   describe('PairV2.getFeeParameters()', () => {
     it('can fetch LBPair fee parameters', async () => {
       const binStep = 10
-      const LBPair = await pair1.fetchLBPair(binStep, false, CLIENT, CHAIN_ID)
+      const LBPair = await pair1.fetchLBPair(binStep, 'v2', CLIENT, CHAIN_ID)
 
       const lbPairFeeParams = await PairV2.getFeeParameters(
         LBPair.LBPair,
