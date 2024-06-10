@@ -32,7 +32,12 @@ import {
   RouterPathParameters
 } from '../types'
 
-import { LBQuoterV21ABI, LBRouterV21ABI } from '../abis/ts'
+import {
+  LBQuoterV21ABI,
+  LBRouterV21ABI,
+  LBQuoterV22ABI,
+  LBRouterV22ABI
+} from '../abis/ts'
 import { Hex, PublicClient, encodeFunctionData, zeroAddress } from 'viem'
 
 /** Class representing a trade */
@@ -311,17 +316,18 @@ export class TradeV2 {
     const { methodName, args, value }: SwapParameters =
       this.swapCallParameters(options)
 
-    const routerAddress =
-      LB_ROUTER_V22_ADDRESS[chainId] === zeroAddress
-        ? LB_ROUTER_V21_ADDRESS[chainId]
-        : LB_ROUTER_V22_ADDRESS[chainId]
+    const useV22 = LB_ROUTER_V22_ADDRESS[chainId] !== zeroAddress
+    const routerAddress = useV22
+      ? LB_ROUTER_V22_ADDRESS[chainId]
+      : LB_ROUTER_V21_ADDRESS[chainId]
+    const abi = useV22 ? LBRouterV22ABI : LBRouterV21ABI
 
     const gasEstimate = await publicClient.estimateGas({
       blockTag: 'latest',
       account,
       to: routerAddress,
       data: encodeFunctionData({
-        abi: LBRouterV21ABI,
+        abi,
         functionName: methodName as any,
         args: args as any
       }),
@@ -367,14 +373,16 @@ export class TradeV2 {
     const amountIn = BigInt(tokenAmountIn.raw.toString())
 
     try {
-      const quoterAddress =
-        LB_QUOTER_V22_ADDRESS[chainId] === zeroAddress
-          ? LB_QUOTER_V21_ADDRESS[chainId]
-          : LB_QUOTER_V22_ADDRESS[chainId]
+      const useV22 = LB_QUOTER_V22_ADDRESS[chainId] !== zeroAddress
+      const quoterAddress = useV22
+        ? LB_QUOTER_V22_ADDRESS[chainId]
+        : LB_QUOTER_V21_ADDRESS[chainId]
+
+      const abi = useV22 ? LBQuoterV22ABI : LBQuoterV21ABI
 
       const calls = routes.map((route) => {
         return {
-          abi: LBQuoterV21ABI,
+          abi,
           address: quoterAddress,
           functionName: 'findBestPathFromAmountIn',
           args: [route.pathToStrArr(), amountIn]
@@ -446,14 +454,16 @@ export class TradeV2 {
     const amountOut = BigInt(tokenAmountOut.raw.toString())
 
     try {
-      const quoterAddress =
-        LB_QUOTER_V22_ADDRESS[chainId] === zeroAddress
-          ? LB_QUOTER_V21_ADDRESS[chainId]
-          : LB_QUOTER_V22_ADDRESS[chainId]
+      const useV22 = LB_QUOTER_V22_ADDRESS[chainId] !== zeroAddress
+      const quoterAddress = useV22
+        ? LB_QUOTER_V22_ADDRESS[chainId]
+        : LB_QUOTER_V21_ADDRESS[chainId]
+
+      const abi = useV22 ? LBQuoterV22ABI : LBQuoterV21ABI
 
       const calls = routes.map((route) => {
         return {
-          abi: LBQuoterV21ABI,
+          abi,
           address: quoterAddress,
           functionName: 'findBestPathFromAmountOut',
           args: [route.pathToStrArr(), amountOut]
