@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.6
+
+### Patch Changes
+
+- a347ba7: add v22
+
 ## 3.0.5
 
 ### Patch Changes
