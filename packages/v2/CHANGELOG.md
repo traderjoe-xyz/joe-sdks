@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.8
+
+### Patch Changes
+
+- 4ce49f5: update lb hooks lens abi
+
 ## 3.0.7
 
 ### Patch Changes
