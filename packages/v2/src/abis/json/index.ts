@@ -16,3 +16,4 @@ export { default as LiquidityAmountsHelperABI } from './LiquidityAmountsHelper.j
 export { default as LimitOrderManagerABI } from './LimitOrderManager.json'
 export { default as APTFarmABI } from './APTFarm.json'
 export { default as APTFarmLensABI } from './APTFarmLens.json'
+export { default as LBHooksLensABI } from './LBHooksLens.json'
