@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.7
+
+### Patch Changes
+
+- 9ee1953: add LBHooksLens ABI
+
 ## 3.0.6
 
 ### Patch Changes
