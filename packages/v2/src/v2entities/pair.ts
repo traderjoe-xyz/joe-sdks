@@ -16,7 +16,11 @@ import {
   LiquidityDistribution,
   BinReserves
 } from '../types'
-import { LB_FACTORY_ADDRESS, LB_FACTORY_V21_ADDRESS } from '../constants'
+import {
+  LB_FACTORY_ADDRESS,
+  LB_FACTORY_V21_ADDRESS,
+  LB_FACTORY_V22_ADDRESS
+} from '../constants'
 import { Bin } from './bin'
 import { getLiquidityConfig } from '../utils'
 
@@ -46,13 +50,13 @@ export class PairV2 {
   /**
    * Returns all available LBPairs for this pair
    *
-   * @param {boolean} isV21
+   * @param {'v2' | 'v21' | 'v22'} version
    * @param {PublicClient} publicClient
    * @param {ChainId} chainId
    * @returns {Promise<LBPair[]>}
    */
   public async fetchAvailableLBPairs(
-    isV21: boolean,
+    version: 'v2' | 'v21' | 'v22',
     publicClient: PublicClient,
     chainId: ChainId
   ): Promise<readonly LBPair[]> {
@@ -61,33 +65,43 @@ export class PairV2 {
       getAddress(this.token1.address)
     ] as const
 
-    return isV21
-      ? await publicClient.readContract({
-          abi: LBFactoryV21ABI,
-          address: LB_FACTORY_V21_ADDRESS[chainId],
-          functionName: 'getAllLBPairs',
-          args
-        })
-      : await publicClient.readContract({
+    switch (version) {
+      case 'v2':
+        return await publicClient.readContract({
           abi: LBFactoryABI,
           address: LB_FACTORY_ADDRESS[chainId],
           functionName: 'getAllLBPairs',
           args
         })
+      case 'v21':
+        return await publicClient.readContract({
+          abi: LBFactoryV21ABI,
+          address: LB_FACTORY_V21_ADDRESS[chainId],
+          functionName: 'getAllLBPairs',
+          args
+        })
+      case 'v22':
+        return await publicClient.readContract({
+          abi: LBFactoryV21ABI,
+          address: LB_FACTORY_V22_ADDRESS[chainId],
+          functionName: 'getAllLBPairs',
+          args
+        })
+    }
   }
 
   /**
    * Fetches LBPair for token0, token1, and given binStep
    *
    * @param {number} binStep
-   * @param {boolean} isV21
+   * @param {'v2' | 'v21' | 'v22'} version
    * @param {PublicClient} publicClient
    * @param {ChainId} chainId
    * @returns {Promise<LBPair>}
    */
   public async fetchLBPair(
     binStep: number,
-    isV21: boolean,
+    version: 'v2' | 'v21' | 'v22',
     publicClient: PublicClient,
     chainId: ChainId
   ): Promise<LBPair> {
@@ -97,24 +111,29 @@ export class PairV2 {
       BigInt(binStep)
     ] as const
 
-    let lbPair: LBPair
-    if (isV21) {
-      lbPair = await publicClient.readContract({
-        abi: LBFactoryV21ABI,
-        address: LB_FACTORY_V21_ADDRESS[chainId],
-        functionName: 'getLBPairInformation',
-        args
-      })
-    } else {
-      lbPair = await publicClient.readContract({
-        abi: LBFactoryABI,
-        address: LB_FACTORY_ADDRESS[chainId],
-        functionName: 'getLBPairInformation',
-        args
-      })
+    switch (version) {
+      case 'v2':
+        return await publicClient.readContract({
+          abi: LBFactoryABI,
+          address: LB_FACTORY_ADDRESS[chainId],
+          functionName: 'getLBPairInformation',
+          args
+        })
+      case 'v21':
+        return await publicClient.readContract({
+          abi: LBFactoryV21ABI,
+          address: LB_FACTORY_V21_ADDRESS[chainId],
+          functionName: 'getLBPairInformation',
+          args
+        })
+      case 'v22':
+        return await publicClient.readContract({
+          abi: LBFactoryV21ABI,
+          address: LB_FACTORY_V22_ADDRESS[chainId],
+          functionName: 'getLBPairInformation',
+          args
+        })
     }
-
-    return lbPair
   }
 
   /**
@@ -195,44 +214,49 @@ export class PairV2 {
    * Fetches the reserves active bin id for the LBPair
    *
    * @param {Hex} LBPairAddr
-   * @param {boolean} isV21
+   * @param {'v2' | 'v21' | 'v22'} version
    * @param {PublicClient} publicClient
    * @returns {Promise<LBPairReservesAndId>}
    */
   public static async getLBPairReservesAndId(
     LBPairAddr: Hex,
-    isV21: boolean,
+    version: 'v2' | 'v21' | 'v22',
     publicClient: PublicClient
   ): Promise<LBPairReservesAndId> {
-    if (isV21) {
-      const [reserveX, reserveY] = await publicClient.readContract({
-        abi: LBPairV21ABI,
-        address: LBPairAddr,
-        functionName: 'getReserves'
-      })
-      const activeId = await publicClient.readContract({
-        abi: LBPairV21ABI,
-        address: LBPairAddr,
-        functionName: 'getActiveId'
-      })
+    switch (version) {
+      case 'v2': {
+        const [reserveX, reserveY, activeId] = await publicClient.readContract({
+          abi: LBPairABI,
+          address: LBPairAddr,
+          functionName: 'getReservesAndId'
+        })
 
-      return {
-        reserveX,
-        reserveY,
-        activeId
+        return {
+          reserveX,
+          reserveY,
+          activeId: Number(activeId)
+        }
       }
-    }
+      case 'v21':
+      case 'v22':
+        const [[reserveX, reserveY], activeId] = await Promise.all([
+          publicClient.readContract({
+            abi: LBPairV21ABI,
+            address: LBPairAddr,
+            functionName: 'getReserves'
+          }),
+          publicClient.readContract({
+            abi: LBPairV21ABI,
+            address: LBPairAddr,
+            functionName: 'getActiveId'
+          })
+        ])
 
-    const [reserveX, reserveY, activeId] = await publicClient.readContract({
-      abi: LBPairABI,
-      address: LBPairAddr,
-      functionName: 'getReservesAndId'
-    })
-
-    return {
-      reserveX,
-      reserveY,
-      activeId: Number(activeId)
+        return {
+          reserveX,
+          reserveY,
+          activeId
+        }
     }
   }
 

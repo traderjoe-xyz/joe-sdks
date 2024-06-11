@@ -18,6 +18,8 @@ import { RouteV2 } from './route'
 import {
   LB_QUOTER_V21_ADDRESS,
   LB_ROUTER_V21_ADDRESS,
+  LB_QUOTER_V22_ADDRESS,
+  LB_ROUTER_V22_ADDRESS,
   ZERO_HEX
 } from '../constants'
 import { toHex, validateAndParseAddress, isZero } from '../utils'
@@ -30,8 +32,13 @@ import {
   RouterPathParameters
 } from '../types'
 
-import { LBQuoterV21ABI, LBRouterV21ABI } from '../abis/ts'
-import { Hex, PublicClient, encodeFunctionData } from 'viem'
+import {
+  LBQuoterV21ABI,
+  LBRouterV21ABI,
+  LBQuoterV22ABI,
+  LBRouterV22ABI
+} from '../abis/ts'
+import { Hex, PublicClient, encodeFunctionData, zeroAddress } from 'viem'
 
 /** Class representing a trade */
 export class TradeV2 {
@@ -309,12 +316,18 @@ export class TradeV2 {
     const { methodName, args, value }: SwapParameters =
       this.swapCallParameters(options)
 
+    const useV22 = LB_ROUTER_V22_ADDRESS[chainId] !== zeroAddress
+    const routerAddress = useV22
+      ? LB_ROUTER_V22_ADDRESS[chainId]
+      : LB_ROUTER_V21_ADDRESS[chainId]
+    const abi = useV22 ? LBRouterV22ABI : LBRouterV21ABI
+
     const gasEstimate = await publicClient.estimateGas({
       blockTag: 'latest',
       account,
-      to: LB_ROUTER_V21_ADDRESS[chainId],
+      to: routerAddress,
       data: encodeFunctionData({
-        abi: LBRouterV21ABI,
+        abi,
         functionName: methodName as any,
         args: args as any
       }),
@@ -360,10 +373,17 @@ export class TradeV2 {
     const amountIn = BigInt(tokenAmountIn.raw.toString())
 
     try {
+      const useV22 = LB_QUOTER_V22_ADDRESS[chainId] !== zeroAddress
+      const quoterAddress = useV22
+        ? LB_QUOTER_V22_ADDRESS[chainId]
+        : LB_QUOTER_V21_ADDRESS[chainId]
+
+      const abi = useV22 ? LBQuoterV22ABI : LBQuoterV21ABI
+
       const calls = routes.map((route) => {
         return {
-          abi: LBQuoterV21ABI,
-          address: LB_QUOTER_V21_ADDRESS[chainId],
+          abi,
+          address: quoterAddress,
           functionName: 'findBestPathFromAmountIn',
           args: [route.pathToStrArr(), amountIn]
         } as const
@@ -434,10 +454,17 @@ export class TradeV2 {
     const amountOut = BigInt(tokenAmountOut.raw.toString())
 
     try {
+      const useV22 = LB_QUOTER_V22_ADDRESS[chainId] !== zeroAddress
+      const quoterAddress = useV22
+        ? LB_QUOTER_V22_ADDRESS[chainId]
+        : LB_QUOTER_V21_ADDRESS[chainId]
+
+      const abi = useV22 ? LBQuoterV22ABI : LBQuoterV21ABI
+
       const calls = routes.map((route) => {
         return {
-          abi: LBQuoterV21ABI,
-          address: LB_QUOTER_V21_ADDRESS[chainId],
+          abi,
+          address: quoterAddress,
           functionName: 'findBestPathFromAmountOut',
           args: [route.pathToStrArr(), amountOut]
         } as const
