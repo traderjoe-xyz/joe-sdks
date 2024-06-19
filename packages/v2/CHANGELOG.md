@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.9
+
+### Patch Changes
+
+- 216d65b: fix sdk-v2 with Vite
+
 ## 3.0.8
 
 ### Patch Changes
