@@ -1,5 +1,13 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.10
+
+### Patch Changes
+
+- 76fb1d0: fix vite
+- Updated dependencies [76fb1d0]
+  - @traderjoe-xyz/sdk-core@2.0.2
+
 ## 3.0.9
 
 ### Patch Changes
