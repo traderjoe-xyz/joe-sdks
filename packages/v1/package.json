@@ -13,7 +13,7 @@
     "traderjoe-xyz",
     "avalanche"
   ],
-  "module": "dist/sdk.esm.js",
+  "module": "dist/index.js",
   "scripts": {
     "test": "vitest --config ./vitest.config.ts",
     "lint": "eslint \"src/**/*.ts*\" \"test/**/*.ts*\"",

@@ -12,6 +12,7 @@
     "traderjoe-xyz",
     "avalanche"
   ],
+  "module": "dist/index.js",
   "scripts": {
     "test": "vitest --config ./vitest.config.ts --allowOnly",
     "lint": "eslint \"src/**/*.ts*\" \"test/**/*.ts*\"",
