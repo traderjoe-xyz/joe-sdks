@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-core
 
+## 2.0.2
+
+### Patch Changes
+
+- 76fb1d0: fix vite
+
 ## 2.0.1
 
 ### Patch Changes

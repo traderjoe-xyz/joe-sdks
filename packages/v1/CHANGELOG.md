@@ -1,5 +1,13 @@
 # @traderjoe-xyz/sdk
 
+## 5.0.2
+
+### Patch Changes
+
+- 76fb1d0: fix vite
+- Updated dependencies [76fb1d0]
+  - @traderjoe-xyz/sdk-core@2.0.2
+
 ## 5.0.1
 
 ### Patch Changes
