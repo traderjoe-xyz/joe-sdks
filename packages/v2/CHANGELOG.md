@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.11
+
+### Patch Changes
+
+- db652ea: update lb hook lens address
+
 ## 3.0.10
 
 ### Patch Changes
