@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.12
+
+### Patch Changes
+
+- 6d89087: update arbitrum router address
+
 ## 3.0.11
 
 ### Patch Changes
