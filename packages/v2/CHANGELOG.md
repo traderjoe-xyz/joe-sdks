@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.14
+
+### Patch Changes
+
+- c82ee73: update quoter v22 on mantle
+
 ## 3.0.13
 
 ### Patch Changes
