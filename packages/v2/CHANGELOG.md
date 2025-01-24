@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.16
+
+### Patch Changes
+
+- 9bd2bd0: export liquidity helper v2 address
+
 ## 3.0.15
 
 ### Patch Changes
