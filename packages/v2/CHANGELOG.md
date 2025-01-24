@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.15
+
+### Patch Changes
+
+- a77c042: add liquidity helper v2
+
 ## 3.0.14
 
 ### Patch Changes
