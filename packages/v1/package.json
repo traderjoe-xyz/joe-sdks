@@ -31,7 +31,7 @@
     "toformat": "^2.0.0"
   },
   "peerDependencies": {
-    "viem": ">=2.22.0"
+    "viem": ">=2.5.0"
   },
   "devDependencies": {
     "@types/big.js": "^6.1.6",
