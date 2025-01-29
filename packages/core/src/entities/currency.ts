@@ -52,6 +52,11 @@ export class CNATIVE extends NativeCurrency {
         symbol = 'AVAX'
         name = 'Avalanche'
         break
+      case 42161:
+      case 421613:
+        symbol = 'ETH'
+        name = 'Arbitrum'
+        break
       case 56:
         symbol = 'BNB'
         name = 'BNB'
