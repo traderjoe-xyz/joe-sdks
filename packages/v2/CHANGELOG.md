@@ -1,5 +1,12 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.18
+
+### Patch Changes
+
+- Updated dependencies [cdcf75e]
+  - @traderjoe-xyz/sdk-core@2.0.4
+
 ## 3.0.17
 
 ### Patch Changes

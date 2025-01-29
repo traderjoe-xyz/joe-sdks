@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-core
 
+## 2.0.4
+
+### Patch Changes
+
+- cdcf75e: fix berachain artio id
+
 ## 2.0.3
 
 ### Patch Changes
