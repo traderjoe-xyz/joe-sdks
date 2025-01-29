@@ -1,5 +1,13 @@
 # @traderjoe-xyz/sdk
 
+## 5.0.3
+
+### Patch Changes
+
+- 06fc276: add berachain artio
+- Updated dependencies [06fc276]
+  - @traderjoe-xyz/sdk-core@2.0.3
+
 ## 5.0.2
 
 ### Patch Changes
