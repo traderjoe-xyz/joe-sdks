@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-core
 
+## 2.0.6
+
+### Patch Changes
+
+- 3a8328f: fix cnative berachain
+
 ## 2.0.5
 
 ### Patch Changes
