@@ -69,7 +69,7 @@ export class CNATIVE extends NativeCurrency {
         symbol = 'MNT'
         name = 'Mantle'
         break
-      case 80084:
+      case 80094:
         symbol = 'BERA'
         name = 'Berachain'
         break
