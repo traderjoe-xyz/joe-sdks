@@ -1,5 +1,12 @@
 # @traderjoe-xyz/sdk
 
+## 5.0.6
+
+### Patch Changes
+
+- Updated dependencies [3a8328f]
+  - @traderjoe-xyz/sdk-core@2.0.6
+
 ## 5.0.5
 
 ### Patch Changes
