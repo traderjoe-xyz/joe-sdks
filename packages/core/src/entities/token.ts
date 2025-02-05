@@ -133,9 +133,9 @@ export const WNATIVE = {
     'WMNT',
     'Wrapped Mantle'
   ),
-  [ChainId.BERACHAIN_ARTIO]: new Token(
-    ChainId.BERACHAIN_ARTIO,
-    '0x7507c1dc16935B82698e4C63f2746A2fCf994dF8',
+  [ChainId.BERACHAIN]: new Token(
+    ChainId.BERACHAIN,
+    '0x6969696969696969696969696969696969696969',
     18,
     'WBERA',
     'Wrapped Bera'

@@ -15,7 +15,7 @@ export const DEX_V2_SUBGRAPH: { [chainId in ChainId]: string } = {
     'https://api.thegraph.com/subgraphs/name/traderjoe-xyz/joe-v2-bnbtest',
   [ChainId.ETHEREUM]: '',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN_ARTIO]: ''
+  [ChainId.BERACHAIN]: ''
 }
 
 export const DEXCANDLES_SUBGRAPH_V2: { [chainId in ChainId]: string } = {
@@ -34,5 +34,5 @@ export const DEXCANDLES_SUBGRAPH_V2: { [chainId in ChainId]: string } = {
   [ChainId.ETHEREUM]:
     'https://api.thegraph.com/subgraphs/name/traderjoe-xyz/dexcandles-v2-eth',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN_ARTIO]: ''
+  [ChainId.BERACHAIN]: ''
 }
