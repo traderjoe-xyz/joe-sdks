@@ -1,5 +1,13 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.19
+
+### Patch Changes
+
+- 6af01a8: add berachain mainnet
+- Updated dependencies [6af01a8]
+  - @traderjoe-xyz/sdk-core@2.0.5
+
 ## 3.0.18
 
 ### Patch Changes

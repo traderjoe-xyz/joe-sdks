@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-core
 
+## 2.0.5
+
+### Patch Changes
+
+- 6af01a8: add berachain mainnet
+
 ## 2.0.4
 
 ### Patch Changes
