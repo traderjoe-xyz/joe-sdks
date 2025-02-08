@@ -4,9 +4,11 @@ import {
   arbitrumGoerli,
   avalanche,
   avalancheFuji,
+  base,
   bsc,
   bscTestnet,
-  mainnet
+  mainnet,
+  mantle
 } from 'viem/chains'
 
 import { ChainId } from '@traderjoe-xyz/sdk-core'
@@ -35,5 +37,9 @@ export const getChain = (chainId: ChainId) => {
       return bscTestnet
     case ChainId.ETHEREUM:
       return mainnet
+    case ChainId.BASE:
+      return base
+    case ChainId.MANTLE:
+      return mantle
   }
 }
