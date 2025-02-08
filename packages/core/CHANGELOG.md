@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-core
 
+## 2.0.7
+
+### Patch Changes
+
+- 366535f: add base network
+
 ## 2.0.6
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.21
+
+### Patch Changes
+
+- 366535f: add base network
+- Updated dependencies [366535f]
+  - @traderjoe-xyz/sdk-core@2.0.7
+
 ## 3.0.20
 
 ### Patch Changes
