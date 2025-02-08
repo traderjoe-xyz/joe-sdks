@@ -12,7 +12,8 @@ export enum ChainId {
   BNB_TESTNET = 97,
   ETHEREUM = 1,
   MANTLE = 5000,
-  BERACHAIN = 80094
+  BERACHAIN = 80094,
+  BASE = 8453
 }
 
 export enum TradeType {

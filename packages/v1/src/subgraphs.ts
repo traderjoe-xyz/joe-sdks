@@ -15,7 +15,8 @@ export const EXCHANGE_SUBGRAPH: { [chainId in ChainId]: string } = {
     'https://api.thegraph.com/subgraphs/name/traderjoe-xyz/joe-v1-bnbtest',
   [ChainId.ETHEREUM]: '',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN]: ''
+  [ChainId.BERACHAIN]: '',
+  [ChainId.BASE]: ''
 }
 
 export const MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -29,7 +30,8 @@ export const MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.BNB_TESTNET]: '',
   [ChainId.ETHEREUM]: '',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN]: ''
+  [ChainId.BERACHAIN]: '',
+  [ChainId.BASE]: ''
 }
 
 export const DEXCANDLES_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -43,7 +45,8 @@ export const DEXCANDLES_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.BNB_TESTNET]: '',
   [ChainId.ETHEREUM]: '',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN]: ''
+  [ChainId.BERACHAIN]: '',
+  [ChainId.BASE]: ''
 }
 
 export const BAR_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -56,7 +59,8 @@ export const BAR_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.BNB_TESTNET]: '',
   [ChainId.ETHEREUM]: '',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN]: ''
+  [ChainId.BERACHAIN]: '',
+  [ChainId.BASE]: ''
 }
 
 export const LENDING_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -70,7 +74,8 @@ export const LENDING_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.BNB_TESTNET]: '',
   [ChainId.ETHEREUM]: '',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN]: ''
+  [ChainId.BERACHAIN]: '',
+  [ChainId.BASE]: ''
 }
 
 export const ROCKET_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -84,7 +89,8 @@ export const ROCKET_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.BNB_TESTNET]: '',
   [ChainId.ETHEREUM]: '',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN]: ''
+  [ChainId.BERACHAIN]: '',
+  [ChainId.BASE]: ''
 }
 
 export const SJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -99,7 +105,8 @@ export const SJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.BNB_TESTNET]: '',
   [ChainId.ETHEREUM]: '',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN]: ''
+  [ChainId.BERACHAIN]: '',
+  [ChainId.BASE]: ''
 }
 
 export const MONEY_MAKER_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -113,7 +120,8 @@ export const MONEY_MAKER_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.BNB_TESTNET]: '',
   [ChainId.ETHEREUM]: '',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN]: ''
+  [ChainId.BERACHAIN]: '',
+  [ChainId.BASE]: ''
 }
 
 export const VEJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -127,7 +135,8 @@ export const VEJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.BNB_TESTNET]: '',
   [ChainId.ETHEREUM]: '',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN]: ''
+  [ChainId.BERACHAIN]: '',
+  [ChainId.BASE]: ''
 }
 
 export const BOOSTED_MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -141,7 +150,8 @@ export const BOOSTED_MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.BNB_TESTNET]: '',
   [ChainId.ETHEREUM]: '',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN]: ''
+  [ChainId.BERACHAIN]: '',
+  [ChainId.BASE]: ''
 }
 
 export const NFT_CONTRACTS_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -155,7 +165,8 @@ export const NFT_CONTRACTS_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.BNB_TESTNET]: '',
   [ChainId.ETHEREUM]: '',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN]: ''
+  [ChainId.BERACHAIN]: '',
+  [ChainId.BASE]: ''
 }
 
 export const JOEPEG_MARKETPLACE_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -169,7 +180,8 @@ export const JOEPEG_MARKETPLACE_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.BNB_TESTNET]: '',
   [ChainId.ETHEREUM]: '',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN]: ''
+  [ChainId.BERACHAIN]: '',
+  [ChainId.BASE]: ''
 }
 
 export const FEE_COLLECTOR_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -183,5 +195,6 @@ export const FEE_COLLECTOR_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.BNB_TESTNET]: '',
   [ChainId.ETHEREUM]: '',
   [ChainId.MANTLE]: '',
-  [ChainId.BERACHAIN]: ''
+  [ChainId.BERACHAIN]: '',
+  [ChainId.BASE]: ''
 }

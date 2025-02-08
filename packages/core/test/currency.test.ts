@@ -27,5 +27,8 @@ describe('NativeCurrency', () => {
     it('returns BERA for 80094', () => {
       expect(CNATIVE.onChain(80094).symbol === 'BERA').toBe(true)
     })
+    it('returns ETH for 8453', () => {
+      expect(CNATIVE.onChain(8453).symbol === 'ETH').toBe(true)
+    })
   })
 })
