@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-core
 
+## 2.0.9
+
+### Patch Changes
+
+- a1e9168: add solana
+
 ## 2.0.8
 
 ### Patch Changes
