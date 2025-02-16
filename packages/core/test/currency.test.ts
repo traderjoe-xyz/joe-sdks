@@ -30,5 +30,8 @@ describe('NativeCurrency', () => {
     it('returns ETH for 8453', () => {
       expect(CNATIVE.onChain(8453).symbol === 'ETH').toBe(true)
     })
+    it('returns MON for 10143', () => {
+      expect(CNATIVE.onChain(10143).symbol === 'MON').toBe(true)
+    })
   })
 })
