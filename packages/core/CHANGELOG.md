@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-core
 
+## 2.0.8
+
+### Patch Changes
+
+- 0aa58fe: add monad testnet
+
 ## 2.0.7
 
 ### Patch Changes
