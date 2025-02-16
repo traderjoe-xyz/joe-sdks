@@ -32,6 +32,7 @@ describe('NativeCurrency', () => {
     })
     it('returns MON for 10143', () => {
       expect(CNATIVE.onChain(10143).symbol === 'MON').toBe(true)
+    })
     it('returns SOL for 1399811149', () => {
       expect(CNATIVE.onChain(1399811149).symbol === 'SOL').toBe(true)
     })
