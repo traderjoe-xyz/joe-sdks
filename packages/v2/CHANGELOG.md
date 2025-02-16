@@ -1,5 +1,13 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.23
+
+### Patch Changes
+
+- a1e9168: add solana
+- Updated dependencies [a1e9168]
+  - @traderjoe-xyz/sdk-core@2.0.9
+
 ## 3.0.22
 
 ### Patch Changes
