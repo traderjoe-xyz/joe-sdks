@@ -79,6 +79,10 @@ export class CNATIVE extends NativeCurrency {
         symbol = 'MON'
         name = 'Monad'
         break
+      case 1399811149:
+        symbol = 'SOL'
+        name = 'Solana'
+        break
       default:
         symbol = ''
         name = ''
