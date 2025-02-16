@@ -223,14 +223,14 @@ export class Trade {
       tradeType === TradeType.EXACT_INPUT
         ? amount
         : route.input.isNative
-        ? CurrencyAmount.ether(chainId, amounts[0].raw)
-        : amounts[0]
+          ? CurrencyAmount.ether(chainId, amounts[0].raw)
+          : amounts[0]
     this.outputAmount =
       tradeType === TradeType.EXACT_OUTPUT
         ? amount
         : route.output.isNative
-        ? CurrencyAmount.ether(chainId, amounts[amounts.length - 1].raw)
-        : amounts[amounts.length - 1]
+          ? CurrencyAmount.ether(chainId, amounts[amounts.length - 1].raw)
+          : amounts[amounts.length - 1]
     this.executionPrice = new Price(
       this.inputAmount.currency,
       this.outputAmount.currency,
@@ -317,8 +317,8 @@ export class Trade {
       currencyAmountIn instanceof TokenAmount
         ? currencyAmountIn.token.chainId
         : currencyOut instanceof Token
-        ? currencyOut.chainId
-        : undefined
+          ? currencyOut.chainId
+          : undefined
     invariant(chainId !== undefined, 'CHAIN_ID')
 
     const amountIn = wrappedAmount(currencyAmountIn, chainId)
@@ -419,8 +419,8 @@ export class Trade {
       currencyAmountOut instanceof TokenAmount
         ? currencyAmountOut.token.chainId
         : currencyIn instanceof Token
-        ? currencyIn.chainId
-        : undefined
+          ? currencyIn.chainId
+          : undefined
     invariant(chainId !== undefined, 'CHAIN_ID')
 
     const amountOut = wrappedAmount(currencyAmountOut, chainId)
