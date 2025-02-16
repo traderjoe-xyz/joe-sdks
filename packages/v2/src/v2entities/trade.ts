@@ -590,9 +590,9 @@ export class TradeV2 {
           ? currentTrade
           : previousTrade
         : currentTrade.trade.inputAmount.greaterThan('0') &&
-            currentTrade.swapOutcome.lessThan(previousTrade.swapOutcome)
-          ? currentTrade
-          : previousTrade
+          currentTrade.swapOutcome.lessThan(previousTrade.swapOutcome)
+        ? currentTrade
+        : previousTrade
     )
 
     return { bestTrade: bestTrade.trade, estimatedGas: bestTrade.estimatedGas }
