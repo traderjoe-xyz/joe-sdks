@@ -75,6 +75,10 @@ export class CNATIVE extends NativeCurrency {
         symbol = 'BERA'
         name = 'Berachain'
         break
+      case 10143:
+        symbol = 'MON'
+        name = 'Monad'
+        break
       default:
         symbol = ''
         name = ''

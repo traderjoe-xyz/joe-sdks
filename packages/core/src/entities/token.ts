@@ -146,6 +146,13 @@ export const WNATIVE = {
     18,
     'WETH',
     'Wrapped ETH'
+  ),
+  [ChainId.MONAD_TESTNET]: new Token(
+    ChainId.MONAD_TESTNET,
+    '0x0000000000000000000000000000000000000000',
+    18,
+    'WMON',
+    'Wrapped MON'
   )
 }
 
