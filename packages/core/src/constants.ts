@@ -14,7 +14,8 @@ export enum ChainId {
   MANTLE = 5000,
   BERACHAIN = 80094,
   BASE = 8453,
-  MONAD_TESTNET = 10143
+  MONAD_TESTNET = 10143,
+  SOLANA = 1399811149
 }
 
 export enum TradeType {

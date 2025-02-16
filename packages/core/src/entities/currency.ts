@@ -46,6 +46,7 @@ export class CNATIVE extends NativeCurrency {
   constructor(chainId: number) {
     let symbol: string
     let name: string
+    let decimals: number = 18
     switch (chainId) {
       case 43113:
       case 43114:
@@ -79,12 +80,17 @@ export class CNATIVE extends NativeCurrency {
         symbol = 'MON'
         name = 'Monad'
         break
+      case 1399811149:
+        symbol = 'SOL'
+        name = 'Solana'
+        decimals = 9
+        break
       default:
         symbol = ''
         name = ''
         break
     }
-    super(chainId, 18, symbol, name)
+    super(chainId, decimals, symbol, name)
   }
   public equals(other: NativeCurrency): boolean {
     return other.isNative && other.chainId === this.chainId

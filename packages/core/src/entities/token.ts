@@ -153,6 +153,13 @@ export const WNATIVE = {
     18,
     'WMON',
     'Wrapped MON'
+  ),
+  [ChainId.SOLANA]: new Token(
+    ChainId.SOLANA,
+    'So11111111111111111111111111111111111111112',
+    9,
+    'WSOL',
+    'Wrapped SOL'
   )
 }
 

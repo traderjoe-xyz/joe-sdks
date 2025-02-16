@@ -25,9 +25,13 @@ export function validateSolidityTypeInstance(
     `${value} is not a ${solidityType}.`
   )
 }
-
 // warns if addresses are not checksummed
 export function validateAndParseAddress(address: string): string {
+  // Handle Solana addresses which are 32-44 characters long and use base58 encoding
+  if (/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(address)) {
+    return address
+  }
+
   try {
     const checksummedAddress = getAddress(address)
     warning(address === checksummedAddress, `${address} is not checksummed.`)

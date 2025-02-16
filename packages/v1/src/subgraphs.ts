@@ -17,7 +17,8 @@ export const EXCHANGE_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.MANTLE]: '',
   [ChainId.BERACHAIN]: '',
   [ChainId.BASE]: '',
-  [ChainId.MONAD_TESTNET]: ''
+  [ChainId.MONAD_TESTNET]: '',
+  [ChainId.SOLANA]: ''
 }
 
 export const MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -33,7 +34,8 @@ export const MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.MANTLE]: '',
   [ChainId.BERACHAIN]: '',
   [ChainId.BASE]: '',
-  [ChainId.MONAD_TESTNET]: ''
+  [ChainId.MONAD_TESTNET]: '',
+  [ChainId.SOLANA]: ''
 }
 
 export const DEXCANDLES_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -49,7 +51,8 @@ export const DEXCANDLES_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.MANTLE]: '',
   [ChainId.BERACHAIN]: '',
   [ChainId.BASE]: '',
-  [ChainId.MONAD_TESTNET]: ''
+  [ChainId.MONAD_TESTNET]: '',
+  [ChainId.SOLANA]: ''
 }
 
 export const BAR_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -64,7 +67,8 @@ export const BAR_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.MANTLE]: '',
   [ChainId.BERACHAIN]: '',
   [ChainId.BASE]: '',
-  [ChainId.MONAD_TESTNET]: ''
+  [ChainId.MONAD_TESTNET]: '',
+  [ChainId.SOLANA]: ''
 }
 
 export const LENDING_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -80,7 +84,8 @@ export const LENDING_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.MANTLE]: '',
   [ChainId.BERACHAIN]: '',
   [ChainId.BASE]: '',
-  [ChainId.MONAD_TESTNET]: ''
+  [ChainId.MONAD_TESTNET]: '',
+  [ChainId.SOLANA]: ''
 }
 
 export const ROCKET_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -96,7 +101,8 @@ export const ROCKET_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.MANTLE]: '',
   [ChainId.BERACHAIN]: '',
   [ChainId.BASE]: '',
-  [ChainId.MONAD_TESTNET]: ''
+  [ChainId.MONAD_TESTNET]: '',
+  [ChainId.SOLANA]: ''
 }
 
 export const SJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -113,7 +119,8 @@ export const SJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.MANTLE]: '',
   [ChainId.BERACHAIN]: '',
   [ChainId.BASE]: '',
-  [ChainId.MONAD_TESTNET]: ''
+  [ChainId.MONAD_TESTNET]: '',
+  [ChainId.SOLANA]: ''
 }
 
 export const MONEY_MAKER_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -129,7 +136,8 @@ export const MONEY_MAKER_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.MANTLE]: '',
   [ChainId.BERACHAIN]: '',
   [ChainId.BASE]: '',
-  [ChainId.MONAD_TESTNET]: ''
+  [ChainId.MONAD_TESTNET]: '',
+  [ChainId.SOLANA]: ''
 }
 
 export const VEJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -145,7 +153,8 @@ export const VEJOE_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.MANTLE]: '',
   [ChainId.BERACHAIN]: '',
   [ChainId.BASE]: '',
-  [ChainId.MONAD_TESTNET]: ''
+  [ChainId.MONAD_TESTNET]: '',
+  [ChainId.SOLANA]: ''
 }
 
 export const BOOSTED_MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -161,7 +170,8 @@ export const BOOSTED_MASTERCHEF_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.MANTLE]: '',
   [ChainId.BERACHAIN]: '',
   [ChainId.BASE]: '',
-  [ChainId.MONAD_TESTNET]: ''
+  [ChainId.MONAD_TESTNET]: '',
+  [ChainId.SOLANA]: ''
 }
 
 export const NFT_CONTRACTS_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -177,10 +187,11 @@ export const NFT_CONTRACTS_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.MANTLE]: '',
   [ChainId.BERACHAIN]: '',
   [ChainId.BASE]: '',
-  [ChainId.MONAD_TESTNET]: ''
+  [ChainId.MONAD_TESTNET]: '',
+  [ChainId.SOLANA]: ''
 }
 
-export const JOEPEG_MARKETPLACE_SUBGRAPH: { [chainId in ChainId]: string } = {
+export const JOEPEG_MARKPLACE_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.FUJI]:
     'https://api.thegraph.com/subgraphs/name/traderjoe-xyz/marketplace-fuji',
   [ChainId.AVALANCHE]:
@@ -193,7 +204,8 @@ export const JOEPEG_MARKETPLACE_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.MANTLE]: '',
   [ChainId.BERACHAIN]: '',
   [ChainId.BASE]: '',
-  [ChainId.MONAD_TESTNET]: ''
+  [ChainId.MONAD_TESTNET]: '',
+  [ChainId.SOLANA]: ''
 }
 
 export const FEE_COLLECTOR_SUBGRAPH: { [chainId in ChainId]: string } = {
@@ -209,5 +221,6 @@ export const FEE_COLLECTOR_SUBGRAPH: { [chainId in ChainId]: string } = {
   [ChainId.MANTLE]: '',
   [ChainId.BERACHAIN]: '',
   [ChainId.BASE]: '',
-  [ChainId.MONAD_TESTNET]: ''
+  [ChainId.MONAD_TESTNET]: '',
+  [ChainId.SOLANA]: ''
 }
