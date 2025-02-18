@@ -1,5 +1,13 @@
 # @traderjoe-xyz/sdk
 
+## 5.0.10
+
+### Patch Changes
+
+- ab05c71: add monad testnet addresses
+- Updated dependencies [ab05c71]
+  - @traderjoe-xyz/sdk-core@2.0.10
+
 ## 5.0.9
 
 ### Patch Changes
