@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-core
 
+## 2.0.10
+
+### Patch Changes
+
+- ab05c71: add monad testnet addresses
+
 ## 2.0.9
 
 ### Patch Changes

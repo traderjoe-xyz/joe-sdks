@@ -1,5 +1,13 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.24
+
+### Patch Changes
+
+- ab05c71: add monad testnet addresses
+- Updated dependencies [ab05c71]
+  - @traderjoe-xyz/sdk-core@2.0.10
+
 ## 3.0.23
 
 ### Patch Changes
