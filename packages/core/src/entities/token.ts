@@ -149,7 +149,7 @@ export const WNATIVE = {
   ),
   [ChainId.MONAD_TESTNET]: new Token(
     ChainId.MONAD_TESTNET,
-    '0x0000000000000000000000000000000000000000',
+    '0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701',
     18,
     'WMON',
     'Wrapped MON'
