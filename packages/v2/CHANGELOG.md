@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.25
+
+### Patch Changes
+
+- 85276fe: fix monad testnet addresses
+
 ## 3.0.24
 
 ### Patch Changes

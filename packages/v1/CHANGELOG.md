@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk
 
+## 5.0.11
+
+### Patch Changes
+
+- 85276fe: fix monad testnet addresses
+
 ## 5.0.10
 
 ### Patch Changes
