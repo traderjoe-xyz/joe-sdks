@@ -15,6 +15,7 @@ export enum ChainId {
   BERACHAIN = 80094,
   BASE = 8453,
   MONAD_TESTNET = 10143,
+  SONIC = 146,
   SOLANA = 1399811149
 }
 
