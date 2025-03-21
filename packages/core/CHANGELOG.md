@@ -1,5 +1,11 @@
 # @traderjoe-xyz/sdk-core
 
+## 2.0.11
+
+### Patch Changes
+
+- 0e5f72b: add sonic
+
 ## 2.0.10
 
 ### Patch Changes
