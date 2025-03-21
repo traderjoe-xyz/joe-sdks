@@ -1,5 +1,13 @@
 # @traderjoe-xyz/sdk-v2
 
+## 3.0.26
+
+### Patch Changes
+
+- 0e5f72b: add sonic
+- Updated dependencies [0e5f72b]
+  - @traderjoe-xyz/sdk-core@2.0.11
+
 ## 3.0.25
 
 ### Patch Changes
