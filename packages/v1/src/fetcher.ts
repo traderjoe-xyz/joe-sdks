@@ -26,7 +26,7 @@ export abstract class Fetcher {
    * @param name optional name of the token
    */
   public static async fetchTokenData(
-    chainId: ChainId,
+    chainId: Exclude<ChainId, ChainId.SOLANA>,
     address: string,
     client: PublicClient = getDefaultPublicClient(chainId),
     symbol?: string,

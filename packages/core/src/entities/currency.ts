@@ -85,6 +85,10 @@ export class CNATIVE extends NativeCurrency {
         name = 'Solana'
         decimals = 9
         break
+      case 146:
+        symbol = 'S'
+        name = 'Sonic'
+        break
       default:
         symbol = ''
         name = ''
